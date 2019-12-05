@@ -15,8 +15,9 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
         Conexion db = new Conexion();
+        
         try {
-            db.MySQLConnection("root", "dinorey64", "consultorio");
+            db.MySQLConnection("root", "Dragon97", "consultorio_juridico_unicah");
         } catch (Exception e) {
             e.printStackTrace();
         }
