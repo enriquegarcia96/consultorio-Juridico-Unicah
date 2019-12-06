@@ -51,26 +51,5 @@ public class Controller {
         }
 
     }
-
-
-    public class Controller2 {
-        @FXML
-        private Button BtnLogin;
-
-
-        public void onPasarVentana(MouseEvent mouseEvent) throws IOException {
-            Stage stage = null;
-            Parent rootPrincipal = null;
-
-            if (mouseEvent.getSource() == BtnLogin) {
-                stage = (Stage) BtnLogin.getScene().getWindow();
-
-                rootPrincipal = FXMLLoader.load(getClass().getResource("../Interfaz_Menu/Controlador_Grafico.fxml"));
-                Scene ScenePrincipal = new Scene(rootPrincipal);
-                stage.setScene(ScenePrincipal);
-                stage.show();
-            }
-        }
-
-    }
 }
+
