@@ -25,6 +25,7 @@ public class Controller {
         String contrasena = TexboxContrasena.getText();
         Controlador abrir = new Controlador();
 
+
         Controller controller = new Controller();
         boolean testeo = controller.validar(usuario,contrasena);
 
