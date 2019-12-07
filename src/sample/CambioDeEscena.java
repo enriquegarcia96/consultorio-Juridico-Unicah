@@ -1,4 +1,4 @@
-package Interfaz_Menu;
+package sample;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,7 +22,7 @@ public class CambioDeEscena {
         if (mouseEvent.getSource() == BtnLogin) {
             stage = (Stage) BtnLogin.getScene().getWindow();
 
-            rootPrincipal = FXMLLoader.load(getClass().getResource("../Interfaz_Menu/Controlador_Grafico.fxml"));
+            rootPrincipal = FXMLLoader.load(getClass().getResource("../sample/Controlador_Grafico.fxml"));
             Scene ScenePrincipal = new Scene(rootPrincipal);
             stage.setScene(ScenePrincipal);
             stage.show();

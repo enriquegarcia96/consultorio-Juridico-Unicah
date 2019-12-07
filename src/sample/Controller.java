@@ -23,6 +23,7 @@ public class Controller {
     public void entrandoLogin(ActionEvent actionEvent) throws Exception {
         String usuario = TexboxNombre.getText();
         String contrasena = TexboxContrasena.getText();
+        Controlador abrir = new Controlador();
 
         Controller controller = new Controller();
         boolean testeo = controller.validar(usuario,contrasena);
@@ -32,9 +33,7 @@ public class Controller {
                     "naaa");
             alert.show();
         }else {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
-                    "correcto");
-            alert.show();
+            abrir.IrFormulario();
 
         }
 
