@@ -5,7 +5,7 @@ public class Conexion {
 
     private static Connection con;
 
-    private Conexion() {}
+    public Conexion() {}
 
     public static Connection abrirConexion() {
         if (con == null) {
@@ -18,6 +18,7 @@ public class Conexion {
         }
         return con;
     }
-
 }
+
+
 
