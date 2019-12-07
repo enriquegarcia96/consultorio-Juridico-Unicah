@@ -1,6 +1,7 @@
 package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -8,14 +9,6 @@ import javafx.scene.control.TextField;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-import java.io.IOException;
 
 
 public class Controller {
@@ -27,29 +20,49 @@ public class Controller {
     @FXML
     private PasswordField TexboxContrasena;
 
-
-    public void entrandoLogin(ActionEvent actionEvent) {
-        String usuario = TexboxNombre.getText().trim();
+    public void entrandoLogin(ActionEvent actionEvent) throws Exception {
+        String usuario = TexboxNombre.getText();
         String contrasena = TexboxContrasena.getText();
-        try {
-            PreparedStatement preparedStatement = Conexion.abrirConexion().prepareStatement(
-                    "select * from usuario" +
-                            "where TipoUsuario = ?" +
-                            "and Contrasena = ?"
-            );
-            preparedStatement.setString(1, usuario);
-            preparedStatement.setString(2, contrasena);
-            ResultSet resultSet = preparedStatement.executeQuery();
 
-            if (resultSet.next()) {
+        Controller controller = new Controller();
+        boolean testeo = controller.validar(usuario,contrasena);
 
-            }
+        if (!testeo){
+            Alert alert = new Alert(Alert.AlertType.ERROR,
+                    "naaa");
+            alert.show();
+        }else {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
+                    "correcto");
+            alert.show();
 
-
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
         }
 
+
+    }
+
+    public boolean validar(String usuario, String contrasena) throws Exception{
+        try {
+            PreparedStatement sentencia = Conexion.abrirConexion().prepareStatement(
+                    "select * from usuario" +
+                            " where TipoUsuario = ?" +
+                            " and Contrasena = ?"
+            );
+            sentencia.setString(1,usuario);
+            sentencia.setString(2,contrasena);
+            System.out.println(sentencia);
+            ResultSet resultSet = sentencia.executeQuery();
+            if (resultSet.next()){
+                return true;
+            }
+        }catch (SQLException  e){
+            System.err.println(e.getMessage());
+        }
+        return false;
+    }
+
+    public void cerrar(ActionEvent actionEvent){
+        System.exit(0);
     }
 }
 
