@@ -6,9 +6,18 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-import java.awt.event.ActionEvent;
-
 public class Controlador {
+
+    public Button button_registro_abogados;
+
+
+    public void onPasarVentana() {
+        Administrador administrador = new Administrador();
+        administrador.IrFormulario2();
+
+    }
+
+
 
     public void IrFormulario () {
         try {
