@@ -22,7 +22,7 @@ public class CambioDeEscena {
         if (mouseEvent.getSource() == BtnLogin) {
             stage = (Stage) BtnLogin.getScene().getWindow();
 
-            rootPrincipal = FXMLLoader.load(getClass().getResource("../sample/Controlador_Grafico.fxml"));
+            rootPrincipal = FXMLLoader.load(getClass().getResource("Controlador_Grafico.fxml"));
             Scene ScenePrincipal = new Scene(rootPrincipal);
             stage.setScene(ScenePrincipal);
             stage.show();
