@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.*?>
 <?import java.lang.*?>
@@ -8,34 +11,56 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="FormularioPrincipal" prefHeight="496.0" prefWidth="756.0" stylesheets="@../Css/ImagenesDeBotones.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controlador">
+<AnchorPane fx:id="FormularioPrincipal" prefHeight="703.0" prefWidth="1442.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controlador">
    <children>
-      <Pane prefHeight="496.0" prefWidth="221.0" style="-fx-background-color: #222D32;">
+      <Pane layoutX="-17.0" prefHeight="728.0" prefWidth="230.0" style="-fx-background-color: #222D32;">
          <children>
-            <Button layoutX="77.0" layoutY="303.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="Confirmar">
->>>>>>> controlador
-               <styleClass>
-                  <String fx:value="imagen" />
-                  <String fx:value="imagen" />
-               </styleClass>
-            </Button>
-
-
-        <Button layoutX="114.0" layoutY="82.0" mnemonicParsing="false" text="Button" />
-
-                        <Button fx:id="btn_registro_clientes" layoutX="77.0" layoutY="186.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="Clientes">
-               <effect>
-                  <Lighting bumpInput="$null">
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </effect>
-            </Button>
-            <Button fx:id="button_registro_abogados" layoutX="77.0" layoutY="248.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="Abogados" />
+            <Button id="btnCliente" layoutX="19.0" layoutY="167.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="145.0" style="-fx-background-color: #222D32;" text="Clientes" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/customer_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Consolas" size="16.0" />
+               </font></Button>
+            <Button id="btnProcurador" layoutX="19.0" layoutY="383.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="167.0" style="-fx-background-color: #222D32;" text="Procuradores" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/morale_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <RadioButton layoutX="61.0" layoutY="234.0" mnemonicParsing="false" opacity="0.6" text="Listar" textFill="#fcf9f9">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </RadioButton>
+            <RadioButton layoutX="60.0" layoutY="268.0" mnemonicParsing="false" opacity="0.6" text="Registrar" textFill="#fcf9f9">
+               <font>
+                  <Font size="13.0" />
+               </font></RadioButton>
+            <RadioButton layoutX="60.0" layoutY="497.0" mnemonicParsing="false" opacity="0.6" text="Registrar" textFill="#fcf9f9">
+               <font>
+                  <Font size="13.0" />
+               </font></RadioButton>
+            <RadioButton layoutX="61.0" layoutY="462.0" mnemonicParsing="false" opacity="0.6" text="Listar" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font></RadioButton>
+            <Separator layoutX="88.0" layoutY="221.0" orientation="VERTICAL" prefHeight="200.0" visible="false" />
+            <Separator layoutX="85.0" layoutY="251.0" orientation="VERTICAL" prefHeight="17.0" prefWidth="6.0" visible="false" />
          </children></Pane>
-      <Button layoutX="526.0" layoutY="286.0" mnemonicParsing="false" text="Button" />
-      <AnchorPane layoutY="-2.0" opacity="0.94" prefHeight="72.0" prefWidth="882.0" style="-fx-background-color: #f56025;" />
+      <AnchorPane layoutX="-16.0" layoutY="-2.0" opacity="0.94" prefHeight="72.0" prefWidth="1459.0" style="-fx-background-color: #f56025;" />
 
    </children>
 </AnchorPane>

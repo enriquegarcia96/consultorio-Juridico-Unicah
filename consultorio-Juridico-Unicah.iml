@@ -11,5 +11,6 @@
     <orderEntry type="library" name="javafx.swing" level="project" />
     <orderEntry type="library" name="mysql-connector-java-8.0.17" level="project" />
     <orderEntry type="library" name="mysql:mysql-connector-java:8.0.171" level="project" />
+    <orderEntry type="library" name="mysql:mysql-connector-java:8.0.172" level="project" />
   </component>
 </module>
