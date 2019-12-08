@@ -3,7 +3,10 @@ package sample;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Controlador {
     public void onPasarVentana() {
@@ -11,6 +14,15 @@ public class Controlador {
 
         administrador.IrFormulario2();
 
+    public Button button_registro_abogados;
+
+    public void onPasarVentana() throws IOException {
+        Stage registroClientes = new Stage();
+        Parent registro = FXMLLoader.load(getClass().getResource("Administrador_Grafico.fxml"));
+        Scene scene = new Scene(registro);
+        registroClientes.setScene(scene);
+        registroClientes.setMaximized(true);
+        registroClientes.show();
     }
 
 

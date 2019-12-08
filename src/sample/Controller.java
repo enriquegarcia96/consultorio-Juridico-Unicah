@@ -3,10 +3,17 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+
 import javafx.stage.Stage;
 
 import java.sql.PreparedStatement;
@@ -38,7 +45,7 @@ public class Controller {
 
         if (!testeo){
             Alert alert = new Alert(Alert.AlertType.ERROR,
-                    "naaa");
+                    "usuario inexistente");
             alert.show();
         }else {
             Stage maxi = new Stage();
@@ -49,10 +56,8 @@ public class Controller {
             maxi.show();
             Stage cerrarLogin = (Stage) ButtonIniciar.getScene().getWindow();
             cerrarLogin.close();
-
+            
         }
-
-
     }
 
     public boolean validar(String usuario, String contrasena) throws Exception{
