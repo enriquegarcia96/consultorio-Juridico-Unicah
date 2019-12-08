@@ -1,3 +1,13 @@
 .imagen{
     -fx-background-image: url(../Imagenes/ff.png);
 }
+.colorBorde {
+    -fx-border-color:#1A2226;
+}
+
+.tablecell {
+    -fx-padding: 0.5em 0.5em 0.1em 0.3em;
+    -fx-border-color: -fx-box-border -fx-box-border transparent transparent;
+    -fx-font: 10px "Segoe UI";
+    -fx-border-insets: 0;
+}
