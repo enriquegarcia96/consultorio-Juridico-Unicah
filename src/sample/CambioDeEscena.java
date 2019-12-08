@@ -13,19 +13,22 @@ import java.io.IOException;
 public class CambioDeEscena {
     @FXML
     private Button BtnLogin;
+    public Button button_registro_abogados;
+
 
 
     public void onPasarVentana(MouseEvent mouseEvent) throws IOException {
         Stage stage = null;
         Parent rootPrincipal = null;
 
-        if (mouseEvent.getSource() == BtnLogin) {
+        if (mouseEvent.getSource() ==BtnLogin ) {
             stage = (Stage) BtnLogin.getScene().getWindow();
 
-            rootPrincipal = FXMLLoader.load(getClass().getResource("Controlador_Grafico.fxml"));
+            rootPrincipal = FXMLLoader.load(getClass().getResource("Administrador_Grafico.fxml"));
             Scene ScenePrincipal = new Scene(rootPrincipal);
             stage.setScene(ScenePrincipal);
             stage.show();
+
         }
     }
 
