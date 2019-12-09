@@ -29,9 +29,6 @@ public class Controller {
     public void entrandoLogin(ActionEvent actionEvent) throws Exception {
         String usuario = TexboxNombre.getText();
         String contrasena = TexboxContrasena.getText();
-
-
-
         Controlador abrir = new Controlador();
         Controller controller = new Controller();
 

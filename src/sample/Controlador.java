@@ -9,10 +9,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Controlador {
-    public void onPasarVentana() {
-        Administrador administrador = new Administrador();
-
-        administrador.IrFormulario2();
 
         public Button button_registro_abogados;
 
