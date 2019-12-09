@@ -1,9 +1,12 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -11,28 +14,98 @@ import javafx.stage.Stage;
 
 public class Administrador {
     @FXML
+    private RadioButton Radio_Rentada;
+    @FXML
+    private RadioButton Radio_Motocicleta;
+    @FXML
+    private RadioButton Radio_Propia;
+    @FXML
+    private RadioButton Radio_Automovil;
+    @FXML
+    private RadioButton Radio_Habitacion;
+    @FXML
+    private RadioButton Radio_Apartamento;
+    @FXML
+    private TextField Text_Numero_Depersonas;
+
+    @FXML
+    private RadioButton Radio_Transporte_Publico;
+
+    @FXML
+    private RadioButton Radio_Otro;
+
+    @FXML
+    private RadioButton Radiio_Prestada;
+    @FXML
+    private TextField text_Esperfique_Parentesco;
+    @FXML
+    private TextField Text_Cantidad_Aportada2;
+    @FXML
+    private TextField Text_Cantidad_Aportada3;
+    @FXML
+    private TextField text_Esperfique_Parentesco3;
+    @FXML
+    private TextField text_Esperfique_Parentesco2;
+    @FXML
+    private TextField Text_Total_Aportada;
+    @FXML
+    private TextField Text_Cantidad_Aportada;
+    @FXML
+    private RadioButton Radio_SI_Datos_Economicos;
+    @FXML
+    private RadioButton Radio_NO_Datos_Economicos;
+    @FXML
+    private TextField Text_Cargo;
+    @FXML
+    private TextField Text_Otros_Ingresos;
+    @FXML
+    private TextField Text_Salario_Ciente;
+    @FXML
+    private TextField Text_Horario;
+    @FXML
+    private TextField Text_Cantidad_Personas_Dependientes;
+    @FXML
+    private AnchorPane Panel_Egresos;
+    @FXML
     private Pane panel_Dato_Generales;;
     @FXML
     private AnchorPane Panel_Ingreso_Familiar;
+    @FXML
+    private RadioButton radio_SI;
+    @FXML
+    private RadioButton radio_NO;
+    @FXML
+    private TextField Text_Empresa_Laboral;
+    @FXML
+    private TextField Text_Parentesco;
+    @FXML
+    private TextField Text_Espicificacion_De_Egresos;
+    @FXML
+    private TextField Text_Informacion_Tramite;
+    @FXML
+    private TextField Text_Nombre_Demandado;
 
+    @FXML
+    private TextField Text_Direccion_Demandado;
+    @FXML
+    private TextField Text_Observaciones_;
+
+
+    public void PanelDatoGeneralesButton(javafx.scene.input.MouseEvent event) {
+        this.panel_Dato_Generales.setVisible(true);
+        this.Panel_Ingreso_Familiar.setVisible(false);
+        this.Panel_Egresos.setVisible(false);
+    }
     public void PanelIngresoFamiliarButton(javafx.scene.input.MouseEvent event) {
         this.Panel_Ingreso_Familiar.setVisible(true);
         this.panel_Dato_Generales.setVisible(true);
+        this.Panel_Egresos.setVisible(false);
     }
-    public void PanelDatoGeneralesButton(javafx.scene.input.MouseEvent event) {
-        this.Panel_Ingreso_Familiar.setVisible(false);
+    public void Panel_De_Egresos(javafx.scene.input.MouseEvent event) {
+        this.Panel_Egresos.setVisible(true);
         this.panel_Dato_Generales.setVisible(true);
+        this.Panel_Ingreso_Familiar.setVisible(false);
     }
-
-
-
-
-
-    //variables del cliente
-
-
-
-
 
 
     public void IrFormulario2 () {
@@ -68,6 +141,60 @@ public class Administrador {
         }
     }
 
+
+    public void grupo(ActionEvent actionEvent) {
+        if (radio_SI.isSelected()){
+            Text_Empresa_Laboral.setDisable(false);
+            Text_Salario_Ciente.setDisable(false);
+            Text_Cargo.setDisable(false);
+            Text_Horario.setDisable(false);
+            Text_Otros_Ingresos.setDisable(false);
+            Text_Cantidad_Personas_Dependientes.setDisable(false);
+            Text_Parentesco.setDisable(false);
+        }else if (radio_NO.isSelected()){
+            Text_Empresa_Laboral.setDisable(true);
+            Text_Empresa_Laboral.setText("");
+            Text_Salario_Ciente.setDisable(true);
+            Text_Salario_Ciente.setText("");
+            Text_Cargo.setDisable(true);
+            Text_Cargo.setText("");
+            Text_Horario.setDisable(true);
+            Text_Horario.setText("");
+            Text_Otros_Ingresos.setDisable(true);
+            Text_Otros_Ingresos.setText("");
+            Text_Cantidad_Personas_Dependientes.setDisable(true);
+            Text_Cantidad_Personas_Dependientes.setText("");
+            Text_Parentesco.setDisable(true);
+            Text_Parentesco.setText("");        }
+    }
+
+    public void Datos_Economicos(ActionEvent actionEvent) {
+        if (Radio_SI_Datos_Economicos.isSelected()){
+            text_Esperfique_Parentesco.setDisable(false);
+            text_Esperfique_Parentesco2.setDisable(false);
+            text_Esperfique_Parentesco3.setDisable(false);
+            Text_Cantidad_Aportada.setDisable(false);
+            Text_Cantidad_Aportada2.setDisable(false);
+            Text_Cantidad_Aportada3.setDisable(false);
+            Text_Total_Aportada.setDisable(false);
+        }else if (Radio_NO_Datos_Economicos.isSelected()){
+            text_Esperfique_Parentesco.setDisable(true);
+            text_Esperfique_Parentesco2.setDisable(true);
+            text_Esperfique_Parentesco3.setDisable(true);
+            Text_Cantidad_Aportada.setDisable(true);
+            Text_Cantidad_Aportada2.setDisable(true);
+            Text_Cantidad_Aportada3.setDisable(true);
+            Text_Total_Aportada.setDisable(true);
+
+            text_Esperfique_Parentesco.setText("");
+            text_Esperfique_Parentesco2.setText("");
+            text_Esperfique_Parentesco3.setText("");
+            Text_Cantidad_Aportada.setText("");
+            Text_Cantidad_Aportada2.setText("");
+            Text_Cantidad_Aportada3.setText("");
+            Text_Total_Aportada.setText("");
+        }
+    }
 
 
 }
