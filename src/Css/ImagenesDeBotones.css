@@ -1,6 +1,8 @@
 .imagen{
     -fx-background-image: url(../Imagenes/ff.png);
+
 }
+
 .colorBorde {
     -fx-border-color:#1A2226;
 }
@@ -15,3 +17,4 @@
 .hola{
    -fx-border-color: black;
 }
+
