@@ -11,3 +11,7 @@
     -fx-font: 10px "Segoe UI";
     -fx-border-insets: 0;
 }
+
+.hola{
+   -fx-border-color: black;
+}
