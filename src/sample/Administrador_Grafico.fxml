@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="682.0" prefWidth="1228.0" style="-fx-background-color: #ECF0F5;" styleClass="colorBorde" stylesheets="@../Css/ImagenesDeBotones.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Administrador">
+<AnchorPane prefHeight="743.0" prefWidth="2632.0" style="-fx-background-color: #ECF0F5;" styleClass="colorBorde" stylesheets="@../Css/ImagenesDeBotones.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Administrador">
    <children>
       <Label layoutX="35.0" layoutY="20.0" prefHeight="60.0" prefWidth="213.0" style="-fx-background-color: #ECF0F5;" text="Registro Cliente">
          <font>
@@ -41,7 +41,7 @@
             <Label layoutX="511.0" layoutY="64.0" prefHeight="28.0" prefWidth="120.0" text="Fecha de nacimiento" />
             <Label layoutX="30.0" layoutY="143.0" prefHeight="28.0" prefWidth="131.0" text="Lugar de nacimiento" />
             <Label layoutX="505.0" layoutY="123.0" prefHeight="41.0" prefWidth="131.0" text="Direccion Actual" />
-            <Label layoutX="36.0" layoutY="217.0" prefHeight="28.0" prefWidth="131.0" text="Municipio" />
+            <Label layoutX="285.0" layoutY="219.0" prefHeight="28.0" prefWidth="131.0" text="Municipio" />
             <Label layoutX="557.0" layoutY="209.0" prefHeight="28.0" prefWidth="80.0" text="Telefono Fijo" />
             <Button layoutX="272.0" layoutY="440.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="90.0" text="Registrar" />
             <TextField fx:id="Text_Edad" layoutX="213.0" layoutY="99.0" prefHeight="25.0" prefWidth="180.0" />
@@ -50,11 +50,11 @@
             <TextField fx:id="Text_Dirrecion_Actual" layoutX="496.0" layoutY="165.0" />
             <TextField fx:id="Text_Telefono_Fijo" layoutX="507.0" layoutY="247.0" />
             <TextField fx:id="Text_profesion" layoutX="285.0" layoutY="397.0" />
-            <ComboBox fx:id="Combo_Municipio" layoutX="7.0" layoutY="247.0" prefWidth="150.0" />
-            <Label layoutX="305.0" layoutY="209.0" prefHeight="25.0" prefWidth="108.0" text="Departamento" />
-            <ComboBox fx:id="Combo_Departamento" layoutX="275.0" layoutY="247.0" prefWidth="150.0" />
+            <ComboBox fx:id="Combo_Municipio" layoutX="260.0" layoutY="263.0" prefWidth="150.0" />
+            <Label layoutX="24.0" layoutY="225.0" prefHeight="25.0" prefWidth="108.0" text="Departamento" />
+            <ComboBox layoutX="21.0" layoutY="260.0" prefWidth="150.0" />
             <Label layoutX="35.0" layoutY="293.0" prefHeight="28.0" prefWidth="53.0" text="Movil" />
-            <TextField fx:id="Text_Movil" layoutY="321.0" />
+            <TextField fx:id="Text_Movil" layoutX="14.0" layoutY="322.0" />
             <Label layoutX="296.0" layoutY="295.0" prefHeight="25.0" prefWidth="108.0" text="Referencia personal" />
             <TextField fx:id="Text_Numero_Identidad" layoutX="506.0" layoutY="395.0" />
             <TextField fx:id="Text_Movil_Referencia_Personal" layoutX="507.0" layoutY="334.0" />
@@ -76,7 +76,7 @@
             </Label>
          </children>
       </Pane>
-      <AnchorPane fx:id="Panel_Ingreso_Familiar" layoutX="41.0" layoutY="146.0" prefHeight="477.0" prefWidth="1111.0" style="-fx-background-color: #ffff;">
+      <AnchorPane fx:id="Panel_Ingreso_Familiar" layoutX="1491.0" layoutY="226.0" prefHeight="477.0" prefWidth="1111.0" style="-fx-background-color: #32a88c;">
          <children>
             <Label layoutX="8.0" layoutY="39.0" text="¿Cuenta con un Empleo Actual?" />
             <Label layoutX="488.0" layoutY="31.0" text="¿Cuanto es el salario que percibe?" />
@@ -155,18 +155,19 @@
             <TextField fx:id="Text_Numero_Depersonas" layoutX="993.0" layoutY="397.0" prefHeight="25.0" prefWidth="59.0" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="Panel_Egresos" layoutX="39.0" layoutY="138.0" onMouseClicked="#Panel_De_Egresos" prefHeight="484.0" prefWidth="1184.0" style="-fx-background-color: #ffff;">
+      <AnchorPane fx:id="Panel_Egresos" layoutX="1249.0" layoutY="36.0" onMouseClicked="#Panel_De_Egresos" prefHeight="305.0" prefWidth="697.0" style="-fx-background-color: #32a852;">
          <children>
             <Label layoutX="63.0" layoutY="25.0" prefHeight="25.0" prefWidth="400.0" text="Especifique la cantidad mensual que gasta en cada uno de los siguientes" />
             <TextField fx:id="Text_Espicificacion_De_Egresos" layoutX="83.0" layoutY="61.0" prefHeight="28.0" prefWidth="360.0" />
             <Label layoutX="34.0" layoutY="134.0" prefHeight="25.0" prefWidth="400.0" text="Informacion del tramite solicitado" />
             <TextField fx:id="Text_Informacion_Tramite" layoutX="26.0" layoutY="159.0" prefHeight="203.0" prefWidth="327.0" />
-            <Label layoutX="709.0" layoutY="38.0" prefHeight="25.0" prefWidth="237.0" text="Nombre completo del posible demandado" />
-            <TextField fx:id="Text_Nombre_Demandado" layoutX="732.0" layoutY="77.0" prefHeight="25.0" prefWidth="237.0" />
-            <Label layoutX="709.0" layoutY="134.0" prefHeight="25.0" prefWidth="199.0" text="Dirreccion del posible demandado" />
-            <TextField fx:id="Text_Direccion_Demandado" layoutX="709.0" layoutY="170.0" prefHeight="25.0" prefWidth="237.0" />
-            <Label layoutX="717.0" layoutY="248.0" prefHeight="25.0" prefWidth="96.0" text="Observaciones" />
-            <TextField fx:id="Text_Observaciones_" layoutX="671.0" layoutY="293.0" prefHeight="25.0" prefWidth="237.0" />
+            <Label layoutX="505.0" layoutY="25.0" prefHeight="25.0" prefWidth="237.0" text="Nombre completo del posible demandado" />
+            <TextField fx:id="Text_Nombre_Demandado" layoutX="483.0" layoutY="63.0" prefHeight="25.0" prefWidth="237.0" />
+            <Label layoutX="453.0" layoutY="159.0" prefHeight="25.0" prefWidth="199.0" text="Dirreccion del posible demandado" />
+            <TextField fx:id="Text_Direccion_Demandado" layoutX="434.0" layoutY="183.0" prefHeight="25.0" prefWidth="237.0" />
+            <Label layoutX="505.0" layoutY="226.0" prefHeight="25.0" prefWidth="96.0" text="Observaciones" />
+            <TextField fx:id="Text_Observaciones_" layoutX="443.0" layoutY="261.0" prefHeight="25.0" prefWidth="237.0" />
+            <Button fx:id="Boton_Registrar_Cliente" layoutX="353.0" layoutY="93.0" mnemonicParsing="false" onAction="#registrar_Cliente" prefHeight="60.0" prefWidth="150.0" text="Registrar" />
          </children>
       </AnchorPane>
    </children>

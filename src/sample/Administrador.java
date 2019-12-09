@@ -1,18 +1,52 @@
 package sample;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import javax.swing.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+public class Administrador  {
+    //implements Initializable
 
-public class Administrador {
+        public void  cargaDepartamentos(JComboBox combo_Departamento){
+            //ArrayList<String> departamentos = new ArrayList<>();
+            try {
+                PreparedStatement mostrardepartamento = Conexion.abrirConexion().prepareStatement(
+                        "select NombreDepartamento from departamento;"
+                );
+                ResultSet resultado = mostrardepartamento.executeQuery();
+
+                combo_Departamento.addItem("Colon");
+
+                while (resultado.next()){
+                    combo_Departamento.addItem(resultado.getString(1));
+                }
+
+            }catch (SQLException e){
+                System.err.println(e.getMessage());
+
+            }
+        }
+
+
+
+
+
+
+
     @FXML
     private RadioButton Radio_Rentada;
     @FXML
@@ -89,7 +123,62 @@ public class Administrador {
     private TextField Text_Direccion_Demandado;
     @FXML
     private TextField Text_Observaciones_;
+    @FXML
+    private ComboBox<String> Combo_Municipio;
+    @FXML
+    private ComboBox<String> Combo_Departamento;
 
+    @FXML
+    private ComboBox<?> Combo_Estado_Civil;
+
+
+
+    /**combo que mustra los departamentos
+     * **
+    public void lista_Departamento(ActionEvent actionEvent) {
+        Combo_Departamento.getValue();
+    }
+   // @FXML
+    ObservableList<String> listaDepartamento = FXCollections.observableArrayList(
+            "Atlántida","Choluteca","Colón","Comayagua","Copán","Cortes","El Paraíso","Francisco Morazán","Gracias a Dios","Intibucá",
+            "Islas de la Bahía","La Paz","Lempira","Ocotepeque","Olancho","Santa Bárbara","Valle","Yoro"
+    );
+    public void initialize(URL url , ResourceBundle resourceBundle){
+        Combo_Departamento.setItems(listaDepartamento);
+        Combo_Municipio.setItems(listaMunicipios);
+
+    }
+    **/
+    /**
+     * combom que muestra los municipios
+     * **/
+    public void listaMunicipios(ActionEvent actionEvent) {
+        Combo_Municipio.getValue();
+    }
+
+    @FXML
+    ObservableList<String> listaMunicipios = FXCollections.observableArrayList(
+            "La Ceiba","Tela","Colón","Jutiapa","La Masica","San Francisco","Arizona","Esparta","El Porvenir","Intibucá",
+            "Islas de la Bahía","La Paz","Lempira","Ocotepeque","Olancho","Santa Bárbara","Valle","Yoro"
+    );
+   // public void initialize2(URL url2 , ResourceBundle resourceBundle2){
+     //   Combo_Municipio.setItems(listaMunicipios);
+    //}
+
+
+
+
+
+
+
+
+
+
+
+
+    public void registrar_Cliente(ActionEvent actionEvent) {
+
+    }
 
     public void PanelDatoGeneralesButton(javafx.scene.input.MouseEvent event) {
         this.panel_Dato_Generales.setVisible(true);
@@ -107,6 +196,10 @@ public class Administrador {
         this.Panel_Ingreso_Familiar.setVisible(false);
     }
 
+
+    public void llevar(){
+
+    }
 
     public void IrFormulario2 () {
         try {
@@ -195,6 +288,7 @@ public class Administrador {
             Text_Total_Aportada.setText("");
         }
     }
+
 
 
 }
