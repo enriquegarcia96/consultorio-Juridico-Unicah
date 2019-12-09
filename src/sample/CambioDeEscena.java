@@ -25,7 +25,9 @@ public class CambioDeEscena {
             rootPrincipal = FXMLLoader.load(getClass().getResource("../sample/Controlador_Grafico.fxml"));
             Scene ScenePrincipal = new Scene(rootPrincipal);
             stage.setScene(ScenePrincipal);
+            System.exit(0);
             stage.show();
+
         }
     }
 
