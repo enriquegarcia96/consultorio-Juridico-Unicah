@@ -16,14 +16,13 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 700, 500));
         this.primaryStage = primaryStage;
         primaryStage.show();
-
     }
 
-    public static void main(String[] args) {
-        String destino= "adanalfredogaleascarcamo@gmail.co";
-        String asunto= "sdfsdfsd";
-        String cuerpo= "adfadsfsdf";
-        Email.enviarConGMail(destino,asunto,cuerpo);
-        launch(args);
-    }
+//    public static void main(String[] args) {
+//        String destino= "adanalfredogaleascarcamo@gmail.co";
+//        String asunto= "sdfsdfsd";
+//        String cuerpo= "adfadsfsdf";
+//        Email.enviarConGMail(destino,asunto,cuerpo);
+//        launch(args);
+//    }
 }

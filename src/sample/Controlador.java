@@ -12,8 +12,6 @@ import java.io.IOException;
 
 
 public class Controlador {
-
-
     public void IrFormulario () {
         try {
 //Te lo comento para que  lo comprendamos tú y yo
@@ -33,7 +31,10 @@ public class Controlador {
         }
     }
 
-        public void IrFormulario2(){
+    public Button button_registro_abogados;
+
+
+    public void IrFormulario2(){
 
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Administrador_Grafico.fxml"));
