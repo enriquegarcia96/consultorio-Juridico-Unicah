@@ -12,5 +12,8 @@
     <orderEntry type="library" name="mysql-connector-java-8.0.17" level="project" />
     <orderEntry type="library" name="mysql:mysql-connector-java:8.0.171" level="project" />
     <orderEntry type="library" name="mysql:mysql-connector-java:8.0.172" level="project" />
+    <orderEntry type="library" name="mysql:mysql-connector-java:8.0.174" level="project" />
+    <orderEntry type="library" name="com.sun.mail:javax.mail:1.6.2" level="project" />
+    <orderEntry type="library" name="javax.activation-1.2.0" level="project" />
   </component>
 </module>
