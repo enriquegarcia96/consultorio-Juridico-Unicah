@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class Controlador {
 
-<<<<<<< HEAD
+
     public void IrFormulario () {
         try {
 //Te lo comento para que  lo comprendamos tú y yo
@@ -27,11 +27,6 @@ public class Controlador {
 // Y ahora le digo que me muestres el stage
             Main.primaryStage.close();
             stage.show();
-
-=======
-
-        public Button button_registro_abogados;
->>>>>>> 1ea475be0590039aa5af682ba31f738996c574bb
 
         } catch (Exception e) {
             e.printStackTrace();
