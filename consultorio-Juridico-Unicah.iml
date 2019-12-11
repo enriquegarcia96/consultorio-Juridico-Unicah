@@ -7,9 +7,11 @@
     </content>
     <orderEntry type="jdk" jdkName="13 (1)" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+
     <orderEntry type="library" exported="" name="javafx-swt" level="project" />
     <orderEntry type="library" exported="" name="mysql:mysql-connector-java:8.0.171" level="project" />
     <orderEntry type="library" exported="" name="com.sun.mail:javax.mail:1.6.2" level="project" />
     <orderEntry type="library" exported="" name="javax.activation-1.2.0" level="project" />
+
   </component>
 </module>

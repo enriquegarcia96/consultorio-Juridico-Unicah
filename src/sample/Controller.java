@@ -1,16 +1,21 @@
 package sample;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.net.URL;
+
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -86,5 +91,24 @@ public class Controller implements Initializable{
     public void cerrar(ActionEvent actionEvent){
         System.exit(0);
     }
+
+    private Button BtnLogin;
+
+
+    public void onPasarVentana(MouseEvent mouseEvent) throws IOException {
+        Stage stage = null;
+        Parent rootPrincipal = null;
+
+        if (mouseEvent.getSource() == BtnLogin) {
+            stage = (Stage) BtnLogin.getScene().getWindow();
+
+            rootPrincipal = FXMLLoader.load(getClass().getResource("Administrador_Grafico.fxml"));
+            Scene ScenePrincipal = new Scene(rootPrincipal);
+            stage.setScene(ScenePrincipal);
+            stage.show();
+        }
+    }
+
+
 }
 

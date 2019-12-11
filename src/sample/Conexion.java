@@ -11,8 +11,8 @@ public class Conexion {
         if (con == null) {
             try {
 
-                con = DriverManager.getConnection("jdbc:mysql://localhost/consultorio?useTimezone=true&serverTimezone=UTC",
-                        "root", "dinorey64");
+                con = DriverManager.getConnection("jdbc:mysql://localhost/consultorio_juridico_unicah?useTimezone=true&serverTimezone=UTC",
+                        "root", "Todoestaenlamente");
             } catch (SQLException e) {
                 System.err.println(e.getMessage());
             }

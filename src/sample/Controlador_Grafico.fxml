@@ -4,13 +4,9 @@
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.AnchorPane?>
+
 
 <AnchorPane fx:id="FormularioPrincipal" focusTraversable="true" prefHeight="728.0" prefWidth="1425.0" styleClass="tablecell" stylesheets="@../Css/ImagenesDeBotones.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controlador">
    <children>
@@ -26,11 +22,14 @@
                </graphic>
                <font>
                   <Font name="Consolas" size="16.0" />
+
                </font>
                <effect>
                   <Blend mode="SOFT_LIGHT" />
                </effect></Button>
             <Button id="btnProcurador" fx:id="button_registro_abogados" disable="true" graphicTextGap="9.0" layoutX="19.0" layoutY="383.0" mnemonicParsing="false" onAction="#IrFormulario" prefHeight="53.0" prefWidth="167.0" style="-fx-background-color: #222D32;" styleClass="hola" stylesheets="@../Css/ImagenesDeBotones.css" text="Procuradores" textFill="WHITE">
+
+  
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -38,8 +37,11 @@
                      </image>
                   </ImageView>
                </graphic>
+
+
                <font>
                   <Font size="16.0" />
+
                </font>
                <effect>
                   <Blend mode="SOFT_LIGHT" />
@@ -67,10 +69,6 @@
             <Separator layoutX="88.0" layoutY="221.0" orientation="VERTICAL" prefHeight="200.0" visible="false" />
             <Separator layoutX="85.0" layoutY="251.0" orientation="VERTICAL" prefHeight="17.0" prefWidth="6.0" visible="false" />
 
-
       <AnchorPane layoutY="-2.0" opacity="0.94" prefHeight="72.0" prefWidth="882.0" style="-fx-background-color: #f56025;" />
       <AnchorPane layoutX="-16.0" layoutY="-2.0" opacity="0.94" prefHeight="72.0" prefWidth="1459.0" style="-fx-background-color: #f56025;" />
-   </children>
-    </Pane>
-   </children>
 </AnchorPane>
