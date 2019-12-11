@@ -12,8 +12,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+<<<<<<< HEAD
 
 import java.io.IOException;
+=======
+>>>>>>> 1ea475be0590039aa5af682ba31f738996c574bb
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -28,14 +31,11 @@ public class Controller {
     @FXML
     private PasswordField TexboxContrasena;
 
-
-
     public void entrandoLogin(ActionEvent actionEvent) throws Exception {
         String usuario = TexboxNombre.getText();
         String contrasena = TexboxContrasena.getText();
         Controlador abrir = new Controlador();
         Controller controller = new Controller();
-
         boolean testeo = controller.validar(usuario,contrasena);
 
         if (!testeo){

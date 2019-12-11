@@ -43,7 +43,9 @@
             <Label layoutX="505.0" layoutY="123.0" prefHeight="41.0" prefWidth="131.0" text="Direccion Actual" />
             <Label layoutX="285.0" layoutY="219.0" prefHeight="28.0" prefWidth="131.0" text="Municipio" />
             <Label layoutX="557.0" layoutY="209.0" prefHeight="28.0" prefWidth="80.0" text="Telefono Fijo" />
-            <Button layoutX="272.0" layoutY="440.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="90.0" text="Registrar" />
+
+            <Button layoutX="272.0" layoutY="440.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="90.0" styleClass="hola" text="Registrar" />
+
             <TextField fx:id="Text_Edad" layoutX="213.0" layoutY="99.0" prefHeight="25.0" prefWidth="180.0" />
             <PasswordField fx:id="Text_Fecha_Nacimiento" layoutX="507.0" layoutY="92.0" />
             <TextField fx:id="Text_Lugar_Nacimiento" layoutX="9.0" layoutY="177.0" />
@@ -52,7 +54,7 @@
             <TextField fx:id="Text_profesion" layoutX="285.0" layoutY="397.0" />
             <ComboBox fx:id="Combo_Municipio" layoutX="260.0" layoutY="263.0" prefWidth="150.0" />
             <Label layoutX="24.0" layoutY="225.0" prefHeight="25.0" prefWidth="108.0" text="Departamento" />
-            <ComboBox layoutX="21.0" layoutY="260.0" prefWidth="150.0" />
+            <ComboBox fx:id="cbDepartamento" layoutX="21.0" layoutY="260.0" prefWidth="150.0" />
             <Label layoutX="35.0" layoutY="293.0" prefHeight="28.0" prefWidth="53.0" text="Movil" />
             <TextField fx:id="Text_Movil" layoutX="14.0" layoutY="322.0" />
             <Label layoutX="296.0" layoutY="295.0" prefHeight="25.0" prefWidth="108.0" text="Referencia personal" />
@@ -61,7 +63,7 @@
             <TextField fx:id="Text_Referencia_Personal" layoutX="287.0" layoutY="321.0" />
             <Label layoutX="503.0" layoutY="295.0" prefHeight="35.0" prefWidth="180.0" text="Telefono de Referencia personal" />
             <Label layoutX="12.0" layoutY="359.0" prefHeight="35.0" prefWidth="131.0" text="Estado civil" />
-            <ComboBox fx:id="Combo_Estado_Civil" layoutX="9.0" layoutY="395.0" prefWidth="150.0" />
+            <ComboBox fx:id="Combo_Estado_Civil" layoutX="260.0" layoutY="479.0" prefWidth="150.0" />
             <Label layoutX="296.0" layoutY="359.0" prefHeight="35.0" prefWidth="131.0" text="Profesion u oficio" />
             <Label layoutX="511.0" layoutY="369.0" prefHeight="28.0" prefWidth="139.0" text="Numero de indentidad" />
             <Label fx:id="ingreso" layoutX="143.0" layoutY="18.0" onMouseClicked="#PanelIngresoFamiliarButton" prefHeight="39.0" prefWidth="180.0" text="Ingreso Familiar">
@@ -74,6 +76,13 @@
                   <Font size="37.0" />
                </font>
             </Label>
+            <RadioButton fx:id="Radio_Soltero" layoutX="24.0" layoutY="401.0" mnemonicParsing="false" text="Soltero">
+               <toggleGroup>
+                  <ToggleGroup fx:id="grupoEstadoCivil" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="Radio_Casado" layoutX="40.0" layoutY="434.0" mnemonicParsing="false" text="Casado" toggleGroup="$grupoEstadoCivil" />
+            <RadioButton fx:id="Radio_Viudo" layoutX="40.0" layoutY="471.0" mnemonicParsing="false" text="Viudo" toggleGroup="$grupoEstadoCivil" />
+            <RadioButton fx:id="Radio_Union" layoutX="145.0" layoutY="434.0" mnemonicParsing="false" text="UnionDeHecho" toggleGroup="$grupoEstadoCivil" />
          </children>
       </Pane>
       <AnchorPane fx:id="Panel_Ingreso_Familiar" layoutX="1491.0" layoutY="226.0" prefHeight="477.0" prefWidth="1111.0" style="-fx-background-color: #32a88c;">
@@ -167,7 +176,7 @@
             <TextField fx:id="Text_Direccion_Demandado" layoutX="434.0" layoutY="183.0" prefHeight="25.0" prefWidth="237.0" />
             <Label layoutX="505.0" layoutY="226.0" prefHeight="25.0" prefWidth="96.0" text="Observaciones" />
             <TextField fx:id="Text_Observaciones_" layoutX="443.0" layoutY="261.0" prefHeight="25.0" prefWidth="237.0" />
-            <Button fx:id="Boton_Registrar_Cliente" layoutX="353.0" layoutY="93.0" mnemonicParsing="false" onAction="#registrar_Cliente" prefHeight="60.0" prefWidth="150.0" text="Registrar" />
+            <Button fx:id="Boton_Registrar_Cliente" layoutX="371.0" layoutY="107.0" mnemonicParsing="false" onAction="#registrar_Cliente" prefHeight="54.0" prefWidth="108.0" styleClass="hola" text="Registrar" />
          </children>
       </AnchorPane>
    </children>

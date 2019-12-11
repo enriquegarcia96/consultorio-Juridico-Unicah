@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -7,8 +8,12 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+
+
+
 public class Controlador {
 
+<<<<<<< HEAD
     public void IrFormulario () {
         try {
 //Te lo comento para que  lo comprendamos tú y yo
@@ -23,6 +28,10 @@ public class Controlador {
             Main.primaryStage.close();
             stage.show();
 
+=======
+
+        public Button button_registro_abogados;
+>>>>>>> 1ea475be0590039aa5af682ba31f738996c574bb
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -41,5 +50,6 @@ public class Controlador {
                 e.printStackTrace();
             }
         }
+
     }
 

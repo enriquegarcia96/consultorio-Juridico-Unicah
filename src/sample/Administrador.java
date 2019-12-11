@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
@@ -14,39 +15,30 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-public class Administrador  {
-    //implements Initializable
+import java.net.URL;
+import java.util.ResourceBundle;
 
-        public void  cargaDepartamentos(JComboBox combo_Departamento){
-            //ArrayList<String> departamentos = new ArrayList<>();
-            try {
-                PreparedStatement mostrardepartamento = Conexion.abrirConexion().prepareStatement(
-                        "select NombreDepartamento from departamento;"
-                );
-                ResultSet resultado = mostrardepartamento.executeQuery();
+public class Administrador implements Initializable {
+    @FXML
+    private ComboBox<Departamento> cbDepartamento;
+    private ObservableList<Departamento> listaDepartamento;
 
-                combo_Departamento.addItem("Colon");
-
-                while (resultado.next()){
-                    combo_Departamento.addItem(resultado.getString(1));
-                }
-
-            }catch (SQLException e){
-                System.err.println(e.getMessage());
-
-            }
-        }
+    @Override
+    public void initialize(URL url , ResourceBundle resourceBundle){
+        listaDepartamento = FXCollections.observableArrayList();
+        Departamento.llenar_combobox(listaDepartamento);
+        cbDepartamento.setItems(listaDepartamento);
+    }
 
 
-
-
-
-
-
+    @FXML
+    private RadioButton Radio_Viudo;
+    @FXML
+    private RadioButton Radio_Union;
+    @FXML
+    private RadioButton Radio_Soltero;
+    @FXML
+    private RadioButton Radio_Casado;
     @FXML
     private RadioButton Radio_Rentada;
     @FXML
@@ -217,17 +209,14 @@ public class Administrador  {
             e.printStackTrace();
         }
     }
-    public void IrFormulario () {
+    public void IrFormulario() {
         try {
-//Te lo comento para que  lo comprendamos tú y yo
-//Léeme el source del archivo que te digo fxml y te pongo el path
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Controlador_Grafico.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
-//Creame un nuevo Stage o para que nos entendamos una nueva ventana windows vacía
+
             Stage stage = new Stage();
-//Y ahora dentro del Stage me metes la escena que anteriormente hemos leído y metido en root1
+
             stage.setScene(new Scene(root1));
-// Y ahora le digo que me muestres el stage
             stage.show();
         }catch (Exception e) {
             e.printStackTrace();

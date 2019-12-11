@@ -20,6 +20,10 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        String destino= "adanalfredogaleascarcamo@gmail.co";
+        String asunto= "sdfsdfsd";
+        String cuerpo= "adfadsfsdf";
+        Email.enviarConGMail(destino,asunto,cuerpo);
         launch(args);
     }
 }
