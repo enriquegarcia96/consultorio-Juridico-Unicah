@@ -13,7 +13,6 @@ import java.io.IOException;
 
 public class Controlador {
 
-<<<<<<< HEAD
     public void IrFormulario () {
         try {
 //Te lo comento para que  lo comprendamos tú y yo
@@ -28,17 +27,15 @@ public class Controlador {
             Main.primaryStage.close();
             stage.show();
 
-=======
-
-        public Button button_registro_abogados;
->>>>>>> 1ea475be0590039aa5af682ba31f738996c574bb
-
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-        public void IrFormulario2(){
+    public Button button_registro_abogados;
+
+
+    public void IrFormulario2(){
 
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Administrador_Grafico.fxml"));

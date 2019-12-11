@@ -12,11 +12,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-<<<<<<< HEAD
 
 import java.io.IOException;
-=======
->>>>>>> 1ea475be0590039aa5af682ba31f738996c574bb
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
