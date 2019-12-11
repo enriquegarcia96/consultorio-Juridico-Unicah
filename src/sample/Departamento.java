@@ -8,11 +8,11 @@ import java.sql.SQLException;
 import java.util.Date;
 
 public class Departamento {
-    private int id ;
+    private int id;
     private String nombreDepartamento;
     private Date creacion;
 
-    public Departamento(int id, String nombreDepartamento){
+    public Departamento(int id, String nombreDepartamento) {
         this.id = id;
         this.nombreDepartamento = nombreDepartamento;
     }
@@ -33,7 +33,7 @@ public class Departamento {
         this.nombreDepartamento = nombreDepartamento;
     }
 
-    public String toString(){
+    public String toString() {
         return nombreDepartamento;
     }
 
@@ -53,13 +53,6 @@ public class Departamento {
             System.out.println(e.getMessage());
         }
     }
-
-
-
-
-
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> formularioCliente
+
+
