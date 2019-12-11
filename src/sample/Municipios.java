@@ -1,9 +1,17 @@
 package sample;
 
+
+import javafx.collections.ObservableList;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Municipios {
     private Integer Id;
     private String NombreMunicipio;
     private Integer IdDepartamento;
+
 
 
     public Municipios(Integer Id, String NombreDepartamento, Integer IdDepartamento) {
@@ -35,5 +43,27 @@ public class Municipios {
     public void setIdDepartamento(Integer idDepartamento) {
         IdDepartamento = idDepartamento;
     }
+
+    public String toString(){
+        return NombreMunicipio;
+
+    }
+    public static void llenar_combobox2(ObservableList<Municipios> lista2) {
+        try {
+
+            PreparedStatement preparedStatement = Conexion.abrirConexion().prepareStatement("SELECT * FROM consultorio.municipios");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                lista2.add(new Municipios(
+                        resultSet.getInt("IdMunicipios"),
+                        resultSet.getString("NombreMunicipios"),
+                        resultSet.getInt("id_departamento")
+                ));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
 
 }

@@ -103,17 +103,12 @@ public class RegistroAbogado implements Initializable{
     private TextField Text_Direccion_DemandadoA;
     @FXML
     private TextField Text_Observaciones_A;
-    @FXML
-    private ComboBox<String> Combo_MunicipioA;
 
     @FXML
     private ComboBox<Departamento> CBdepartamentoA;
-    @FXML
     private ObservableList<Departamento> listaDepartamento;
-
-    public void CBdepartamentoA(ActionEvent actionEvent) {
-    }
-
+    @FXML
+    private ComboBox<Municipios> Combo_MunicipioA;
 
     @Override
     public void initialize(URL url , ResourceBundle resourceBundle){
@@ -121,7 +116,6 @@ public class RegistroAbogado implements Initializable{
         Departamento.llenar_combobox(listaDepartamento);
         CBdepartamentoA.setItems(listaDepartamento);
     }
-
 
 
     public void registrar_ClienteA(ActionEvent actionEvent) {
