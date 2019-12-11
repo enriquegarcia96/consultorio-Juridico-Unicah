@@ -2,12 +2,17 @@ package sample;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application {
-    public static Stage primaryStage;
+
+
+
+public class Main extends Application  {
+
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -18,11 +23,16 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-//    public static void main(String[] args) {
-//        String destino= "adanalfredogaleascarcamo@gmail.co";
-//        String asunto= "sdfsdfsd";
-//        String cuerpo= "adfadsfsdf";
-//        Email.enviarConGMail(destino,asunto,cuerpo);
-//        launch(args);
-//    }
+
+
+    public static void main(String[] args) {
+        String destino= "adanalfredogaleascarcamo@gmail.co";
+        String asunto= "sdfsdfsd";
+        String cuerpo= "adfadsfsdf";
+        Email.enviarConGMail(destino,asunto,cuerpo);
+        launch(args);
+    }
+
+
+
 }
