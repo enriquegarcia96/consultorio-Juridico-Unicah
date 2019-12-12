@@ -44,10 +44,9 @@
             <Label layoutX="285.0" layoutY="219.0" prefHeight="28.0" prefWidth="131.0" text="Municipio" />
             <Label layoutX="557.0" layoutY="209.0" prefHeight="28.0" prefWidth="80.0" text="Telefono Fijo" />
 
-            <Button layoutX="272.0" layoutY="440.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="90.0" styleClass="hola" text="Registrar" />
+            <Button fx:id="Boton_Registra" layoutX="272.0" layoutY="440.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="90.0" styleClass="hola" text="Registrar" />
 
             <TextField fx:id="Text_Edad" layoutX="213.0" layoutY="99.0" prefHeight="25.0" prefWidth="180.0" />
-            <PasswordField fx:id="Text_Fecha_Nacimiento" layoutX="507.0" layoutY="92.0" />
             <TextField fx:id="Text_Lugar_Nacimiento" layoutX="9.0" layoutY="177.0" />
             <TextField fx:id="Text_Dirrecion_Actual" layoutX="496.0" layoutY="165.0" />
             <TextField fx:id="Text_Telefono_Fijo" layoutX="507.0" layoutY="247.0" />
@@ -63,7 +62,6 @@
             <TextField fx:id="Text_Referencia_Personal" layoutX="287.0" layoutY="321.0" />
             <Label layoutX="503.0" layoutY="295.0" prefHeight="35.0" prefWidth="180.0" text="Telefono de Referencia personal" />
             <Label layoutX="12.0" layoutY="359.0" prefHeight="35.0" prefWidth="131.0" text="Estado civil" />
-            <ComboBox fx:id="Combo_Estado_Civil" layoutX="260.0" layoutY="479.0" prefWidth="150.0" />
             <Label layoutX="296.0" layoutY="359.0" prefHeight="35.0" prefWidth="131.0" text="Profesion u oficio" />
             <Label layoutX="511.0" layoutY="369.0" prefHeight="28.0" prefWidth="139.0" text="Numero de indentidad" />
             <Label fx:id="ingreso" layoutX="143.0" layoutY="18.0" onMouseClicked="#PanelIngresoFamiliarButton" prefHeight="39.0" prefWidth="180.0" text="Ingreso Familiar">
@@ -83,9 +81,12 @@
             <RadioButton fx:id="Radio_Casado" layoutX="40.0" layoutY="434.0" mnemonicParsing="false" text="Casado" toggleGroup="$grupoEstadoCivil" />
             <RadioButton fx:id="Radio_Viudo" layoutX="40.0" layoutY="471.0" mnemonicParsing="false" text="Viudo" toggleGroup="$grupoEstadoCivil" />
             <RadioButton fx:id="Radio_Union" layoutX="145.0" layoutY="434.0" mnemonicParsing="false" text="UnionDeHecho" toggleGroup="$grupoEstadoCivil" />
+            <TextField fx:id="Text_Fecha_Nacimiento" layoutX="483.0" layoutY="99.0" />
+            <TextField fx:id="aparta" layoutX="404.0" layoutY="476.0" />
+            <Button layoutX="279.0" layoutY="501.0" mnemonicParsing="false" onAction="#botonRegistrar" text="Button" />
          </children>
       </Pane>
-      <AnchorPane fx:id="Panel_Ingreso_Familiar" layoutX="1491.0" layoutY="226.0" prefHeight="477.0" prefWidth="1111.0" style="-fx-background-color: #32a88c;">
+      <AnchorPane fx:id="Panel_Ingreso_Familiar" layoutX="1492.0" layoutY="80.0" prefHeight="477.0" prefWidth="1111.0" style="-fx-background-color: #32a88c;">
          <children>
             <Label layoutX="8.0" layoutY="39.0" text="¿Cuenta con un Empleo Actual?" />
             <Label layoutX="488.0" layoutY="31.0" text="¿Cuanto es el salario que percibe?" />
@@ -121,7 +122,7 @@
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="187.0" text="Favor Especifique el Parentesco" />
                   <Label layoutX="218.0" layoutY="14.0" prefHeight="17.0" prefWidth="108.0" text="Cantidad Aportada" />
-                  <TextField fx:id="text_Esperfique_Parentesco" layoutX="14.0" layoutY="50.0" />
+                  <TextField fx:id="text_Esperfique_Parentesco" layoutX="14.0" layoutY="51.0" />
                   <TextField fx:id="Text_Cantidad_Aportada" layoutX="177.0" layoutY="50.0" />
                   <TextField fx:id="text_Esperfique_Parentesco2" layoutX="14.0" layoutY="101.0" />
                   <TextField fx:id="Text_Cantidad_Aportada2" layoutX="177.0" layoutY="101.0" />
@@ -164,10 +165,10 @@
             <TextField fx:id="Text_Numero_Depersonas" layoutX="993.0" layoutY="397.0" prefHeight="25.0" prefWidth="59.0" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="Panel_Egresos" layoutX="1249.0" layoutY="36.0" onMouseClicked="#Panel_De_Egresos" prefHeight="305.0" prefWidth="697.0" style="-fx-background-color: #32a852;">
+      <AnchorPane fx:id="Panel_Egresos" layoutX="542.0" layoutY="39.0" onMouseClicked="#Panel_De_Egresos" prefHeight="305.0" prefWidth="697.0" style="-fx-background-color: #32a852;">
          <children>
             <Label layoutX="63.0" layoutY="25.0" prefHeight="25.0" prefWidth="400.0" text="Especifique la cantidad mensual que gasta en cada uno de los siguientes" />
-            <TextField fx:id="Text_Espicificacion_De_Egresos" layoutX="83.0" layoutY="61.0" prefHeight="28.0" prefWidth="360.0" />
+            <TextField fx:id="Text_Espicificacion_De_Egresos" layoutX="83.0" layoutY="60.0" prefHeight="28.0" prefWidth="360.0" />
             <Label layoutX="34.0" layoutY="134.0" prefHeight="25.0" prefWidth="400.0" text="Informacion del tramite solicitado" />
             <TextField fx:id="Text_Informacion_Tramite" layoutX="26.0" layoutY="159.0" prefHeight="203.0" prefWidth="327.0" />
             <Label layoutX="505.0" layoutY="25.0" prefHeight="25.0" prefWidth="237.0" text="Nombre completo del posible demandado" />
