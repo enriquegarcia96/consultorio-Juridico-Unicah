@@ -12,6 +12,7 @@ public class Usuario {
     private String TipoUsuario;
     private String Contrasena;
 
+
     public Usuario(String Id, String NombreCompleto, String TipoUsuario, String Contrasena){
         this.Id = Id;
         this.NombreCompleto = NombreCompleto;
@@ -63,13 +64,15 @@ public class Usuario {
         return usuario;
     }
 
-    public String getIdUsuario() {
+
+    public String getId() {
         return Id;
     }
 
-    public void setIdUsuario(String idUsuario) {
+    public void setId(String idUsuario) {
         Id = idUsuario;
     }
+
 
     public String getNombreUsuario() {
         return NombreCompleto;
@@ -77,6 +80,14 @@ public class Usuario {
 
     public void setNombreUsuario(String nombreCompleto) {
         NombreCompleto = nombreCompleto;
+    }
+
+    public String getTipoUsuario() {
+        return TipoUsuario;
+    }
+
+    public void setTipoUsuario(String tipoUsuario) {
+        TipoUsuario = tipoUsuario;
     }
 
 
@@ -88,13 +99,7 @@ public class Usuario {
         Contrasena = contrasena;
     }
 
-    public String getTipoUsuario() {
-        return TipoUsuario;
-    }
 
-    public void setTipoUsuario(String tipoUsuario) {
-        TipoUsuario = tipoUsuario;
-    }
 
     public String toString(){
         return TipoUsuario;
@@ -121,3 +126,4 @@ public class Usuario {
     }
 
 }
+

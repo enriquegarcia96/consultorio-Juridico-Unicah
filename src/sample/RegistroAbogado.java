@@ -110,11 +110,21 @@ public class RegistroAbogado implements Initializable{
     @FXML
     private ComboBox<Municipios> Combo_MunicipioA;
 
+    private ObservableList<Municipios> listaMunicipio;
+
+
+
     @Override
     public void initialize(URL url , ResourceBundle resourceBundle){
         listaDepartamento = FXCollections.observableArrayList();
         Departamento.llenar_combobox(listaDepartamento);
         CBdepartamentoA.setItems(listaDepartamento);
+
+        listaMunicipio = FXCollections.observableArrayList();
+        Municipios.llenar_combobox2(listaMunicipio);
+        Combo_MunicipioA.setItems(listaMunicipio);
+
+
     }
 
 
