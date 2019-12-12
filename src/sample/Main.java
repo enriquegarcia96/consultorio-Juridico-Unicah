@@ -17,7 +17,7 @@ public class Main extends Application  {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Inicie sesion");
         primaryStage.setScene(new Scene(root, 700, 500));
-        this.primaryStage = primaryStage;
+//        this.primaryStage = primaryStage;
         primaryStage.show();
     }
 
