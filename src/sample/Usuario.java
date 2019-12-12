@@ -38,6 +38,7 @@ public class Usuario {
     public void setNombre(String nombre) {
         Nombre = nombre;
     }
+
     public String getTipoUsuario() {
         return TipoUsuario;
     }
@@ -45,6 +46,7 @@ public class Usuario {
     public void setTipoUsuario(String tipoUsuario) {
         TipoUsuario = tipoUsuario;
     }
+
 
     public String getContrasena() {
         return Contrasena;
@@ -80,3 +82,5 @@ public class Usuario {
         }
     }
 }
+
+

@@ -1,6 +1,8 @@
 package sample;
 
+
 import javafx.collections.ObservableList;
+
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -61,5 +63,6 @@ public class Municipios {
             System.out.println(e.getMessage());
         }
     }
+
 
 }

@@ -125,10 +125,6 @@ public class RegistroAbogado implements Initializable{
 
     }
 
-
-
-
-
     public void registrar_ClienteA(ActionEvent actionEvent) {
 
     }

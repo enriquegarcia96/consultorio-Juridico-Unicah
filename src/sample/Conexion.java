@@ -7,10 +7,12 @@ public class Conexion {
 
     public Conexion() {}
 
+
+
+    
     public static Connection abrirConexion() {
         if (con == null) {
             try {
-
                 con = DriverManager.getConnection("jdbc:mysql://localhost/consultorio?useTimezone=true&serverTimezone=UTC",
                         "root", "dinorey64");
             } catch (SQLException e) {

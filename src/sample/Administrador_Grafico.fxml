@@ -22,7 +22,7 @@
             <Insets />
          </opaqueInsets>
          <children>
-            <Label fx:id="ClienteLabel" layoutX="7.0" layoutY="20.0" onMouseClicked="#PanelDatoGeneralesButton" prefHeight="36.0" prefWidth="96.0" text="Cliente">
+            <Label fx:id="ClienteLabel" layoutX="14.0" layoutY="11.0" onMouseClicked="#PanelDatoGeneralesButton" prefHeight="36.0" prefWidth="96.0" text="Cliente">
                <font>
                   <Font name="Microsoft Tai Le Bold" size="24.0" />
                </font>
@@ -32,22 +32,22 @@
                   <Font name="Berlin Sans FB" size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="Text_Nombre_Completo" layoutX="14.0" layoutY="92.0" prefHeight="20.0" prefWidth="139.0">
+            <TextField fx:id="Text_Nombre_Completo" layoutX="12.0" layoutY="92.0" prefHeight="28.0" prefWidth="131.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </TextField>
-            <Label layoutX="260.0" layoutY="66.0" prefHeight="35.0" prefWidth="90.0" text="Edad" />
-            <Label layoutX="511.0" layoutY="64.0" prefHeight="28.0" prefWidth="120.0" text="Fecha de nacimiento" />
-            <Label layoutX="30.0" layoutY="143.0" prefHeight="28.0" prefWidth="131.0" text="Lugar de nacimiento" />
-            <Label layoutX="505.0" layoutY="123.0" prefHeight="41.0" prefWidth="131.0" text="Direccion Actual" />
-            <Label layoutX="285.0" layoutY="219.0" prefHeight="28.0" prefWidth="131.0" text="Municipio" />
-            <Label layoutX="557.0" layoutY="209.0" prefHeight="28.0" prefWidth="80.0" text="Telefono Fijo" />
+            <Label layoutX="195.0" layoutY="61.0" prefHeight="35.0" prefWidth="90.0" text="Edad" />
+            <Label layoutX="18.0" layoutY="143.0" prefHeight="28.0" prefWidth="120.0" text="Fecha de nacimiento" />
+            <Label layoutX="195.0" layoutY="143.0" prefHeight="28.0" prefWidth="131.0" text="Lugar de nacimiento" />
+            <Label layoutX="368.0" layoutY="145.0" prefHeight="41.0" prefWidth="131.0" text="Direccion Actual" />
+            <Label layoutX="195.0" layoutY="233.0" prefHeight="28.0" prefWidth="131.0" text="Municipio" />
+            <Label layoutX="370.0" layoutY="224.0" prefHeight="28.0" prefWidth="80.0" text="Telefono Fijo" />
 
-            <Button layoutX="272.0" layoutY="440.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="90.0" styleClass="hola" text="Registrar" />
+
+            <Button fx:id="Boton_Registra" layoutX="272.0" layoutY="440.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="90.0" styleClass="hola" text="Registrar" />
 
             <TextField fx:id="Text_Edad" layoutX="213.0" layoutY="99.0" prefHeight="25.0" prefWidth="180.0" />
-            <PasswordField fx:id="Text_Fecha_Nacimiento" layoutX="507.0" layoutY="92.0" />
             <TextField fx:id="Text_Lugar_Nacimiento" layoutX="9.0" layoutY="177.0" />
             <TextField fx:id="Text_Dirrecion_Actual" layoutX="496.0" layoutY="165.0" />
             <TextField fx:id="Text_Telefono_Fijo" layoutX="507.0" layoutY="247.0" />
@@ -63,7 +63,6 @@
             <TextField fx:id="Text_Referencia_Personal" layoutX="287.0" layoutY="321.0" />
             <Label layoutX="503.0" layoutY="295.0" prefHeight="35.0" prefWidth="180.0" text="Telefono de Referencia personal" />
             <Label layoutX="12.0" layoutY="359.0" prefHeight="35.0" prefWidth="131.0" text="Estado civil" />
-            <ComboBox fx:id="Combo_Estado_Civil" layoutX="260.0" layoutY="479.0" prefWidth="150.0" />
             <Label layoutX="296.0" layoutY="359.0" prefHeight="35.0" prefWidth="131.0" text="Profesion u oficio" />
             <Label layoutX="511.0" layoutY="369.0" prefHeight="28.0" prefWidth="139.0" text="Numero de indentidad" />
             <Label fx:id="ingreso" layoutX="143.0" layoutY="18.0" onMouseClicked="#PanelIngresoFamiliarButton" prefHeight="39.0" prefWidth="180.0" text="Ingreso Familiar">
@@ -71,23 +70,32 @@
                   <Font name="Microsoft Tai Le" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="egresos" layoutX="324.0" layoutY="11.0" onMouseClicked="#Panel_De_Egresos" prefHeight="54.0" prefWidth="161.0" text="Egresos">
+            <Label fx:id="egresos" layoutX="324.0" layoutY="3.0" onMouseClicked="#Panel_De_Egresos" prefHeight="54.0" prefWidth="140.0" text="Egresos">
                <font>
                   <Font size="37.0" />
                </font>
             </Label>
-            <RadioButton fx:id="Radio_Soltero" layoutX="24.0" layoutY="401.0" mnemonicParsing="false" text="Soltero">
+            <RadioButton fx:id="Radio_Soltero" layoutX="20.0" layoutY="414.0" mnemonicParsing="false" text="Soltero">
                <toggleGroup>
                   <ToggleGroup fx:id="grupoEstadoCivil" />
                </toggleGroup></RadioButton>
+         </children>
+      </Pane>
+
+
+
             <RadioButton fx:id="Radio_Casado" layoutX="40.0" layoutY="434.0" mnemonicParsing="false" text="Casado" toggleGroup="$grupoEstadoCivil" />
             <RadioButton fx:id="Radio_Viudo" layoutX="40.0" layoutY="471.0" mnemonicParsing="false" text="Viudo" toggleGroup="$grupoEstadoCivil" />
             <RadioButton fx:id="Radio_Union" layoutX="145.0" layoutY="434.0" mnemonicParsing="false" text="UnionDeHecho" toggleGroup="$grupoEstadoCivil" />
+
+            <TextField fx:id="Text_Fecha_Nacimiento" layoutX="483.0" layoutY="99.0" />
+            <TextField fx:id="aparta" layoutX="404.0" layoutY="476.0" />
+            <Button layoutX="279.0" layoutY="501.0" mnemonicParsing="false" onAction="#botonRegistrar" text="Button" />
          </children>
       </Pane>
-      <AnchorPane fx:id="Panel_Ingreso_Familiar" layoutX="1491.0" layoutY="226.0" prefHeight="477.0" prefWidth="1111.0" style="-fx-background-color: #32a88c;">
+      <AnchorPane fx:id="Panel_Ingreso_Familiar" layoutX="1492.0" layoutY="80.0" prefHeight="477.0" prefWidth="1111.0" style="-fx-background-color: #32a88c;">
          <children>
-            <Label layoutX="8.0" layoutY="39.0" text="¿Cuenta con un Empleo Actual?" />
+            <Label layoutX="46.0" layoutY="52.0" text="¿Cuenta con un Empleo Actual?" />
             <Label layoutX="488.0" layoutY="31.0" text="¿Cuanto es el salario que percibe?" />
             <Label layoutX="708.0" layoutY="31.0" text="¿Otro miembro Familiar que aporte al Ingreso Familiar?" />
             <Label layoutX="488.0" layoutY="306.0" text="Parentesco" />
@@ -96,6 +104,7 @@
             <Label layoutX="70.0" layoutY="204.0" text="Horario:" />
             <Label layoutX="59.0" layoutY="297.0" text="N° de Personas Dependientes Economicamnete" />
             <Label layoutX="488.0" layoutY="204.0" text="Otros Ingresos:" />
+
             <TextField fx:id="Text_Empresa_Laboral" layoutX="65.0" layoutY="162.0" />
             <TextField fx:id="Text_Cantidad_Personas_Dependientes" layoutX="65.0" layoutY="330.0" />
             <TextField fx:id="Text_Parentesco" layoutX="489.0" layoutY="330.0" />
@@ -103,25 +112,17 @@
             <TextField fx:id="Text_Horario" layoutX="65.0" layoutY="239.0" />
             <TextField fx:id="Text_Cargo" layoutX="489.0" layoutY="150.0" />
             <TextField fx:id="Text_Salario_Ciente" layoutX="488.0" layoutY="60.0" />
+
             <Pane layoutX="185.0" layoutY="34.0" prefHeight="35.0" prefWidth="120.0" styleClass="hola">
                <cursor>
                   <Cursor fx:constant="S_RESIZE" />
                </cursor>
-               <children>
-                  <RadioButton fx:id="radio_SI" layoutX="15.0" layoutY="9.0" mnemonicParsing="false" onAction="#grupo" text="SI">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="grupo" />
-                     </toggleGroup>
-                  </RadioButton>
-
-                        <RadioButton fx:id="radio_NO" layoutX="65.0" layoutY="8.0" mnemonicParsing="false" onAction="#grupo" text="NO" toggleGroup="$grupo" />
-               </children>
             </Pane>
-            <Pane fx:id="Panel_Datos_Economicos" layoutX="763.0" layoutY="63.0" prefHeight="246.0" prefWidth="340.0" styleClass="colorBorde">
+            <Pane fx:id="Panel_Datos_Economicos" layoutX="698.0" layoutY="81.0" prefHeight="246.0" prefWidth="340.0" styleClass="colorBorde">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="187.0" text="Favor Especifique el Parentesco" />
                   <Label layoutX="218.0" layoutY="14.0" prefHeight="17.0" prefWidth="108.0" text="Cantidad Aportada" />
-                  <TextField fx:id="text_Esperfique_Parentesco" layoutX="14.0" layoutY="50.0" />
+                  <TextField fx:id="text_Esperfique_Parentesco" layoutX="14.0" layoutY="51.0" />
                   <TextField fx:id="Text_Cantidad_Aportada" layoutX="177.0" layoutY="50.0" />
                   <TextField fx:id="text_Esperfique_Parentesco2" layoutX="14.0" layoutY="101.0" />
                   <TextField fx:id="Text_Cantidad_Aportada2" layoutX="177.0" layoutY="101.0" />
@@ -130,31 +131,35 @@
                   <TextField fx:id="Text_Total_Aportada" layoutX="88.0" layoutY="194.0" />
                </children>
             </Pane>
-            <RadioButton fx:id="Radio_SI_Datos_Economicos" layoutX="1007.0" layoutY="31.0" mnemonicParsing="false" onAction="#Datos_Economicos" text="SI">
+            <RadioButton fx:id="Radio_SI_Datos_Economicos" layoutX="715.0" layoutY="64.0" mnemonicParsing="false" onAction="#Datos_Economicos" text="SI">
                <toggleGroup>
                   <ToggleGroup fx:id="grupo2" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="Radio_NO_Datos_Economicos" layoutX="1045.0" layoutY="31.0" mnemonicParsing="false" onAction="#Datos_Economicos" text="No" toggleGroup="$grupo2" />
-            <Label layoutX="749.0" layoutY="334.0" prefHeight="17.0" prefWidth="108.0" text="Tipo de Vivienda:" />
-            <RadioButton fx:id="Radio_Apartamento" layoutX="846.0" layoutY="334.0" mnemonicParsing="false" text="Apartamento">
+            <RadioButton fx:id="Radio_NO_Datos_Economicos" layoutX="945.0" layoutY="64.0" mnemonicParsing="false" onAction="#Datos_Economicos" text="No" toggleGroup="$grupo2" />
+            <Label layoutX="692.0" layoutY="347.0" prefHeight="17.0" prefWidth="108.0" text="Tipo de Vivienda:" />
+            <RadioButton fx:id="Radio_Apartamento" layoutX="815.0" layoutY="347.0" mnemonicParsing="false" text="Apartamento">
                <toggleGroup>
                   <ToggleGroup fx:id="grupo22" />
                </toggleGroup>
             </RadioButton>
-            <Label layoutX="749.0" layoutY="355.0" text="La Vivienda que Habita es:" />
-            <Label layoutX="730.0" layoutY="401.0" text="Numero de personas que Habtan en la Vivienda" />
-            <Label layoutX="670.0" layoutY="438.0" text="Metodo de Transporte" />
-            <RadioButton fx:id="Radiio_Prestada" layoutX="889.0" layoutY="375.0" mnemonicParsing="false" text="Prestada">
+            <Label layoutX="698.0" layoutY="384.0" text="La Vivienda que Habita es:" />
+            <Label layoutX="695.0" layoutY="435.0" text="Numero de personas que Habtan en la Vivienda" />
+            <Label layoutX="698.0" layoutY="474.0" text="Metodo de Transporte" />
+            <RadioButton fx:id="Radiio_Prestada" layoutX="873.0" layoutY="384.0" mnemonicParsing="false" text="Prestada">
                <toggleGroup>
                   <ToggleGroup fx:id="grupo4" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="Radio_Motocicleta" layoutX="981.0" layoutY="429.0" mnemonicParsing="false" text="Motocicleta">
+            <RadioButton fx:id="Radio_Motocicleta" layoutX="1066.0" layoutY="474.0" mnemonicParsing="false" text="Motocicleta">
                <toggleGroup>
                   <ToggleGroup fx:id="grupo3" />
                </toggleGroup>
             </RadioButton>
+
+
+                  <RadioButton fx:id="radio_NO" layoutX="165.0" layoutY="79.0" mnemonicParsing="false" onAction="#grupo" text="NO" toggleGroup="$grupo" />
+
             <RadioButton fx:id="Radio_Automovil" layoutX="905.0" layoutY="447.0" mnemonicParsing="false" text="Automovil" toggleGroup="$grupo3" />
             <RadioButton fx:id="Radio_Transporte_Publico" layoutX="794.0" layoutY="438.0" mnemonicParsing="false" text="Transporte Publico" toggleGroup="$grupo3" />
             <RadioButton fx:id="Radio_Otro" layoutX="964.0" layoutY="375.0" mnemonicParsing="false" text="Otro" toggleGroup="$grupo4" />
@@ -164,10 +169,10 @@
             <TextField fx:id="Text_Numero_Depersonas" layoutX="993.0" layoutY="397.0" prefHeight="25.0" prefWidth="59.0" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="Panel_Egresos" layoutX="1249.0" layoutY="36.0" onMouseClicked="#Panel_De_Egresos" prefHeight="305.0" prefWidth="697.0" style="-fx-background-color: #32a852;">
+      <AnchorPane fx:id="Panel_Egresos" layoutX="542.0" layoutY="39.0" onMouseClicked="#Panel_De_Egresos" prefHeight="305.0" prefWidth="697.0" style="-fx-background-color: #32a852;">
          <children>
             <Label layoutX="63.0" layoutY="25.0" prefHeight="25.0" prefWidth="400.0" text="Especifique la cantidad mensual que gasta en cada uno de los siguientes" />
-            <TextField fx:id="Text_Espicificacion_De_Egresos" layoutX="83.0" layoutY="61.0" prefHeight="28.0" prefWidth="360.0" />
+            <TextField fx:id="Text_Espicificacion_De_Egresos" layoutX="83.0" layoutY="60.0" prefHeight="28.0" prefWidth="360.0" />
             <Label layoutX="34.0" layoutY="134.0" prefHeight="25.0" prefWidth="400.0" text="Informacion del tramite solicitado" />
             <TextField fx:id="Text_Informacion_Tramite" layoutX="26.0" layoutY="159.0" prefHeight="203.0" prefWidth="327.0" />
             <Label layoutX="505.0" layoutY="25.0" prefHeight="25.0" prefWidth="237.0" text="Nombre completo del posible demandado" />
