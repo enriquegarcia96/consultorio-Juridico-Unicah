@@ -37,7 +37,10 @@ public class Administrador implements Initializable {
     @FXML
     private TextField aparta;
 
+
+
     public void botonRegistrar(ActionEvent actionEvent){
+        Departamento departamento = cbDepartamento.getSelectionModel().getSelectedItem();
         String estadoCivil = "";
         if (Radio_Soltero.isSelected()) {
             estadoCivil = "Soltero";
@@ -83,7 +86,7 @@ public class Administrador implements Initializable {
         String fechaNacimiento = Text_Fecha_Nacimiento.getText();
         String lugarnacimiento = Text_Lugar_Nacimiento.getText();
         String direccionActual = Text_Dirrecion_Actual.getText();
-        ObservableList<Departamento> departamento = cbDepartamento.getItems();
+        ObservableList<Departamento> departamento2 = cbDepartamento.getItems();
         ObservableList<Municipios> municipios = Combo_Municipio.getItems();
         String telefonoFijo = Text_Telefono_Fijo.getText();
         String movil = Text_Movil.getText();
@@ -112,7 +115,7 @@ public class Administrador implements Initializable {
             PreparedStatement preparedStatement = Conexion.abrirConexion().prepareStatement(
                     "INSERT INTO departamento (NombreDepartamento) VALUES (?)"
             );
-            preparedStatement.setString(1, apa);
+            preparedStatement.setString(1,departamento.getNombreDepartamento());
             preparedStatement.execute();
 
 
