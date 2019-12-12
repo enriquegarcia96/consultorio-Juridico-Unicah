@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.*?>
 
 
+<?import javafx.scene.effect.Blend?>
 <AnchorPane fx:id="FormularioPrincipal" focusTraversable="true" prefHeight="728.0" prefWidth="1425.0" styleClass="tablecell" stylesheets="@../Css/ImagenesDeBotones.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controlador">
    <children>
       <Pane layoutX="-8.0" prefHeight="728.0" prefWidth="221.0" style="-fx-background-color: #222D32;" styleClass="tablecell" stylesheets="@../Css/ImagenesDeBotones.css">
