@@ -7,14 +7,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    public static Stage primaryStage;
+   // public static Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Inicie sesion");
         primaryStage.setScene(new Scene(root, 700, 500));
-        this.primaryStage = primaryStage;
+     //   this.primaryStage = primaryStage;
         primaryStage.show();
 
     }

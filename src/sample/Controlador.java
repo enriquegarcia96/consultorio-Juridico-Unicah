@@ -3,10 +3,7 @@ package sample;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
-import java.awt.event.ActionEvent;
 
 public class Controlador {
 
@@ -21,7 +18,7 @@ public class Controlador {
 //Y ahora dentro del Stage me metes la escena que anteriormente hemos leído y metido en root1
             stage.setScene(new Scene(root1));
 // Y ahora le digo que me muestres el stage
-            Main.primaryStage.close();
+            //Main.primaryStage.close();
             stage.show();
 
 
