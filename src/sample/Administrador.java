@@ -125,44 +125,6 @@ public class Administrador implements Initializable {
 
 
 
-    /**combo que mustra los departamentos
-     * **
-    public void lista_Departamento(ActionEvent actionEvent) {
-        Combo_Departamento.getValue();
-    }
-   // @FXML
-    ObservableList<String> listaDepartamento = FXCollections.observableArrayList(
-            "Atlántida","Choluteca","Colón","Comayagua","Copán","Cortes","El Paraíso","Francisco Morazán","Gracias a Dios","Intibucá",
-            "Islas de la Bahía","La Paz","Lempira","Ocotepeque","Olancho","Santa Bárbara","Valle","Yoro"
-    );
-    public void initialize(URL url , ResourceBundle resourceBundle){
-        Combo_Departamento.setItems(listaDepartamento);
-        Combo_Municipio.setItems(listaMunicipios);
-
-    }
-    **/
-    /**
-     * combom que muestra los municipios
-     * **/
-    public void listaMunicipios(ActionEvent actionEvent) {
-        Combo_Municipio.getValue();
-    }
-
-    @FXML
-    ObservableList<String> listaMunicipios = FXCollections.observableArrayList(
-            "La Ceiba","Tela","Colón","Jutiapa","La Masica","San Francisco","Arizona","Esparta","El Porvenir","Intibucá",
-            "Islas de la Bahía","La Paz","Lempira","Ocotepeque","Olancho","Santa Bárbara","Valle","Yoro"
-    );
-   // public void initialize2(URL url2 , ResourceBundle resourceBundle2){
-     //   Combo_Municipio.setItems(listaMunicipios);
-    //}
-
-
-
-
-
-
-
 
 
 

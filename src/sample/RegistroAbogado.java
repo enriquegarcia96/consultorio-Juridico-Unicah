@@ -103,16 +103,13 @@ public class RegistroAbogado implements Initializable{
     private TextField Text_Direccion_DemandadoA;
     @FXML
     private TextField Text_Observaciones_A;
-    @FXML
-    private ComboBox<String> Combo_MunicipioA;
 
     @FXML
     private ComboBox<Departamento> CBdepartamentoA;
-    @FXML
     private ObservableList<Departamento> listaDepartamento;
-
-    public void CBdepartamentoA(ActionEvent actionEvent) {
-    }
+    @FXML
+    private ComboBox<Municipios> Combo_MunicipioA;
+    private ObservableList<Municipios> listaMunicipio;
 
 
     @Override
@@ -120,7 +117,15 @@ public class RegistroAbogado implements Initializable{
         listaDepartamento = FXCollections.observableArrayList();
         Departamento.llenar_combobox(listaDepartamento);
         CBdepartamentoA.setItems(listaDepartamento);
+
+        listaMunicipio = FXCollections.observableArrayList();
+        Municipios.llenar_combobox2(listaMunicipio);
+        Combo_MunicipioA.setItems(listaMunicipio);
+
+
     }
+
+
 
 
 
