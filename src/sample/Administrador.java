@@ -230,6 +230,7 @@ public class Administrador implements Initializable {
     private TextField Text_Nombre_Completo;
 
     @FXML
+<<<<<<< HEAD
     private TextField Text_Edad;
     @FXML
     private TextField Text_Lugar_Nacimiento;
@@ -251,8 +252,6 @@ public class Administrador implements Initializable {
     private TextField Text_profesion;
     @FXML
     private TextField Text_Numero_Identidad;
-
-
 
 
 
@@ -284,7 +283,7 @@ public class Administrador implements Initializable {
         cbDepartamento.setItems(listaDepartamento);
 
         listaMunicipios = FXCollections.observableArrayList();
-        Municipios.llenar_comboboxMunicipio(listaMunicipios);
+        Municipios.llenar_combobox2(listaMunicipios);
         Combo_Municipio.setItems(listaMunicipios);
     }
 

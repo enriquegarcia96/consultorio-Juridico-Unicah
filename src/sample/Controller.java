@@ -9,12 +9,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.net.URL;
-
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,7 +20,8 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 
-public class Controller implements Initializable{
+public class Controller implements Initializable {
+
 
     @FXML
     private TextField TexboxNombre;
@@ -40,8 +39,6 @@ public class Controller implements Initializable{
         Usuario.llenar_combobox3(listaUsuario);
         cbtipousuario.setItems(listaUsuario);
     }
-
-
 
     public void entrandoLogin(ActionEvent actionEvent) throws Exception {
         String usuario = TexboxNombre.getText();
