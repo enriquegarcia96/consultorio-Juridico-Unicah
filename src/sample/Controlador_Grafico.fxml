@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="FormularioPrincipal" prefHeight="728.0" prefWidth="1425.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controlador">
+
+<AnchorPane fx:id="FormularioPrincipal" focusTraversable="true" prefHeight="728.0" prefWidth="1425.0" styleClass="tablecell" stylesheets="@../Css/ImagenesDeBotones.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controlador">
    <children>
-      <Pane layoutX="-8.0" prefHeight="728.0" prefWidth="221.0" style="-fx-background-color: #222D32;">
+      <Pane layoutX="-8.0" prefHeight="728.0" prefWidth="221.0" style="-fx-background-color: #222D32;" styleClass="tablecell" stylesheets="@../Css/ImagenesDeBotones.css">
          <children>
-            <Button fx:id="btn_registro_clientes" layoutX="19.0" layoutY="167.0" mnemonicParsing="false" onAction="#IrFormulario" prefHeight="49.0" prefWidth="145.0" style="-fx-background-color: #222D32;" stylesheets="@../Css/ImagenesDeBotones.css" text="Clientes" textFill="WHITE">
+            <Button fx:id="btn_registro_clientes" graphicTextGap="10.0" layoutX="19.0" layoutY="167.0" mnemonicParsing="false" onAction="#IrFormulario" prefHeight="49.0" prefWidth="145.0" style="-fx-background-color: #222D32;" styleClass="hola" stylesheets="@../Css/ImagenesDeBotones.css" text="Clientes" textFill="WHITE">
                <graphic>
-                  <ImageView fitHeight="42.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="31.0" fitWidth="216.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Imagenes/customer_32px.png" />
                      </image>
@@ -25,19 +22,31 @@
                </graphic>
                <font>
                   <Font name="Consolas" size="16.0" />
-               </font></Button>
-            <Button id="btnProcurador" fx:id="button_registro_abogados" layoutX="19.0" layoutY="383.0" mnemonicParsing="false" onAction="#IrFormulario" prefHeight="53.0" prefWidth="167.0" style="-fx-background-color: #222D32;" text="Procuradores" textFill="WHITE">
+
+               </font>
+               <effect>
+                  <Blend mode="SOFT_LIGHT" />
+               </effect></Button>
+            <Button id="btnProcurador" fx:id="button_registro_abogados" disable="true" graphicTextGap="9.0" layoutX="19.0" layoutY="383.0" mnemonicParsing="false" onAction="#IrFormulario" prefHeight="53.0" prefWidth="167.0" style="-fx-background-color: #222D32;" styleClass="hola" stylesheets="@../Css/ImagenesDeBotones.css" text="Procuradores" textFill="WHITE">
+
+  
                <graphic>
-                  <ImageView fitHeight="42.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="38.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Imagenes/morale_32px.png" />
                      </image>
                   </ImageView>
                </graphic>
+
+
                <font>
                   <Font size="16.0" />
-               </font></Button>
-            <RadioButton layoutX="61.0" layoutY="234.0" mnemonicParsing="false" opacity="0.6" text="Listar" textFill="#fcf9f9">
+
+               </font>
+               <effect>
+                  <Blend mode="SOFT_LIGHT" />
+               </effect></Button>
+            <RadioButton layoutX="59.0" layoutY="221.0" mnemonicParsing="false" opacity="0.6" styleClass="hola" stylesheets="@../Css/ImagenesDeBotones.css" text="Listar" textFill="#fcf9f9">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -45,25 +54,21 @@
                   <Font size="13.0" />
                </font>
             </RadioButton>
-            <RadioButton layoutX="60.0" layoutY="268.0" mnemonicParsing="false" opacity="0.6" text="Registrar" textFill="#fcf9f9">
+            <RadioButton layoutX="60.0" layoutY="268.0" mnemonicParsing="false" opacity="0.6" styleClass="hola" stylesheets="@../Css/ImagenesDeBotones.css" text="Registrar" textFill="#fcf9f9">
                <font>
                   <Font size="13.0" />
                </font></RadioButton>
-            <RadioButton layoutX="60.0" layoutY="497.0" mnemonicParsing="false" opacity="0.6" text="Registrar" textFill="#fcf9f9">
+            <RadioButton layoutX="60.0" layoutY="497.0" mnemonicParsing="false" opacity="0.6" styleClass="hola" stylesheets="@../Css/ImagenesDeBotones.css" text="Registrar" textFill="#fcf9f9">
                <font>
                   <Font size="13.0" />
                </font></RadioButton>
-            <RadioButton layoutX="61.0" layoutY="462.0" mnemonicParsing="false" opacity="0.6" text="Listar" textFill="WHITE">
+            <RadioButton layoutX="61.0" layoutY="462.0" mnemonicParsing="false" opacity="0.6" styleClass="hola" stylesheets="@../Css/ImagenesDeBotones.css" text="Listar" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font></RadioButton>
             <Separator layoutX="88.0" layoutY="221.0" orientation="VERTICAL" prefHeight="200.0" visible="false" />
             <Separator layoutX="85.0" layoutY="251.0" orientation="VERTICAL" prefHeight="17.0" prefWidth="6.0" visible="false" />
 
-
       <AnchorPane layoutY="-2.0" opacity="0.94" prefHeight="72.0" prefWidth="882.0" style="-fx-background-color: #f56025;" />
       <AnchorPane layoutX="-16.0" layoutY="-2.0" opacity="0.94" prefHeight="72.0" prefWidth="1459.0" style="-fx-background-color: #f56025;" />
-   </children>
-    </Pane>
-   </children>
 </AnchorPane>
