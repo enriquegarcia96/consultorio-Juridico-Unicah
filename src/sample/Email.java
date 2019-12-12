@@ -1,7 +1,10 @@
+
 /**package sample;
+>>>>>>> formularioCliente
 
 import javax.mail.Message;
 import javax.mail.MessagingException;
+
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
@@ -40,4 +43,9 @@ String clave = "Dinorey64";
         }
     }
 }
+
+
+
+
 **/
+
