@@ -8,17 +8,20 @@ import java.sql.SQLException;
 
 public class Usuario {
     private Integer IdUsuario;
-    private String NombreUsuario;
+
+
     private String Nombre;
     private String Contrasena;
     private String TipoUsuario;
 
-    public  Usuario(Integer IdUsuario, String NombreUsuario, String Nombre, String Contrasena, String TipoUsuario){
+
+    public  Usuario(Integer IdUsuario, String Nombre, String Contrasena, String TipoUsuario){
         this.IdUsuario = IdUsuario;
-        this.NombreUsuario = NombreUsuario;
         this.Nombre = Nombre;
-        this.Contrasena = Contrasena;
         this.TipoUsuario = TipoUsuario;
+        this.Contrasena = Contrasena;
+
+
     }
 
 
@@ -30,13 +33,8 @@ public class Usuario {
         IdUsuario = idUsuario;
     }
 
-    public String getNombreUsuario() {
-        return NombreUsuario;
-    }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        NombreUsuario = nombreUsuario;
-    }
+
 
     public String getNombre() {
         return Nombre;
@@ -46,6 +44,15 @@ public class Usuario {
         Nombre = nombre;
     }
 
+    public String getTipoUsuario() {
+        return TipoUsuario;
+    }
+
+    public void setTipoUsuario(String tipoUsuario) {
+        TipoUsuario = tipoUsuario;
+    }
+
+
     public String getContrasena() {
         return Contrasena;
     }
@@ -54,13 +61,7 @@ public class Usuario {
         Contrasena = contrasena;
     }
 
-    public String getTipoUsuario() {
-        return TipoUsuario;
-    }
 
-    public void setTipoUsuario(String tipoUsuario) {
-        TipoUsuario = tipoUsuario;
-    }
 
     public String toString(){
         return TipoUsuario;
@@ -76,7 +77,8 @@ public class Usuario {
             while (resultSet.next()) {
                 lista3.add(new Usuario(
                         resultSet.getInt("IdUsuario"),
-                        resultSet.getString("NombreUsuario"),
+
+
                         resultSet.getString("NombreCompleto"),
                         resultSet.getString("TipoUsuario"),
                         resultSet.getString("Contrasena")
@@ -86,4 +88,6 @@ public class Usuario {
             System.out.println(e.getMessage());
         }
     }
+
 }
+

@@ -284,7 +284,7 @@ public class Administrador implements Initializable {
         cbDepartamento.setItems(listaDepartamento);
 
         listaMunicipios = FXCollections.observableArrayList();
-        Municipios.llenar_comboboxMunicipio(listaMunicipios);
+        Municipios.llenar_combobox2(listaMunicipios);
         Combo_Municipio.setItems(listaMunicipios);
     }
 
