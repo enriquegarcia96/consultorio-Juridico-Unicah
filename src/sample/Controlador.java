@@ -10,6 +10,7 @@ import java.io.IOException;
 
 
 public class Controlador {
+
     public void IrFormulario () {
         try {
 //Te lo comento para que  lo comprendamos tú y yo
@@ -23,6 +24,7 @@ public class Controlador {
 // Y ahora le digo que me muestres el stage
             //Main.primaryStage.close();
             stage.show();
+
 
         } catch (Exception e) {
             e.printStackTrace();
