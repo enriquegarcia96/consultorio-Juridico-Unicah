@@ -4,10 +4,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import java.io.IOException;
-
 
 
 
@@ -23,7 +21,7 @@ public class Controlador {
 //Y ahora dentro del Stage me metes la escena que anteriormente hemos leído y metido en root1
             stage.setScene(new Scene(root1));
 // Y ahora le digo que me muestres el stage
-            Main.primaryStage.close();
+            //Main.primaryStage.close();
             stage.show();
 
         } catch (Exception e) {
@@ -31,7 +29,7 @@ public class Controlador {
         }
     }
 
-    public Button button_registro_abogados;
+   // public Button button_registro_abogados;
 
 
     public void IrFormulario2(){
