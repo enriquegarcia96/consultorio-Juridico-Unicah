@@ -7,6 +7,9 @@ public class Conexion {
 
     public Conexion() {}
 
+
+
+    
     public static Connection abrirConexion() {
         if (con == null) {
             try {
