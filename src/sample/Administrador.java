@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -16,21 +17,128 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class Administrador implements Initializable {
+
+
+    @FXML
+    private ComboBox<Municipios> Combo_Departamento;
+    @FXML
+    private ComboBox<Municipios> Combo_Municipio;
+    private ObservableList<Municipios> listaMunicipios;
     @FXML
     private ComboBox<Departamento> cbDepartamento;
     private ObservableList<Departamento> listaDepartamento;
+    @FXML
+    private Button Boton_Registra;
+    @FXML
+    private TextField aparta;
 
-    @Override
-    public void initialize(URL url , ResourceBundle resourceBundle){
-        listaDepartamento = FXCollections.observableArrayList();
-        Departamento.llenar_combobox(listaDepartamento);
-        cbDepartamento.setItems(listaDepartamento);
+    public void botonRegistrar(ActionEvent actionEvent){
+        String estadoCivil = "";
+        if (Radio_Soltero.isSelected()) {
+            estadoCivil = "Soltero";
+        } else if (Radio_Casado.isSelected()) {
+            estadoCivil = "Casado";
+        } else if (Radio_Viudo.isSelected()) {
+            estadoCivil = "Viudo";
+        } else if (Radio_Union.isSelected()) {
+            estadoCivil = "UnionDeHecho";
+        }
+
+        //transporte
+        String vivienda = "";
+        if (Radio_Apartamento.isSelected()) {
+            vivienda = "Apartamento";
+        } else if (Radio_Habitacion.isSelected()) {
+            vivienda = "CasaDeHabitacion";
+        }
+
+        String habitada = "";
+        if (Radio_Propia.isSelected()) {
+            habitada = "Propia";
+        } else if (Radio_Rentada.isSelected()) {
+            habitada = "Rentada";
+        } else if (Radiio_Prestada.isSelected()) {
+            habitada = "Prestada";
+        } else if (Radio_Otro.isSelected()) {
+            habitada = "otro";
+        }
+
+        String trasporte = "";
+        if (Radio_Transporte_Publico.isSelected()) {
+            trasporte = "trasporte publico";
+        } else if (Radio_Automovil.isSelected()) {
+            trasporte = "Automovil";
+        } else if (Radio_Motocicleta.isSelected()) {
+            trasporte = "Motocicleta";
+        }
+
+
+        String nombreCompleto = Text_Nombre_Completo.getText();
+        String edad = Text_Edad.getText();
+        String fechaNacimiento = Text_Fecha_Nacimiento.getText();
+        String lugarnacimiento = Text_Lugar_Nacimiento.getText();
+        String direccionActual = Text_Dirrecion_Actual.getText();
+        ObservableList<Departamento> departamento = cbDepartamento.getItems();
+        ObservableList<Municipios> municipios = Combo_Municipio.getItems();
+        String telefonoFijo = Text_Telefono_Fijo.getText();
+        String movil = Text_Movil.getText();
+        String referenciaPersonal = Text_Referencia_Personal.getText();
+        String telefonoReferencia = Text_Movil_Referencia_Personal.getText();
+        String profesion = Text_profesion.getText();
+        String identidad = Text_Numero_Identidad.getText();
+        String empresalaboral = Text_Empresa_Laboral.getText();
+        String horario = Text_Horario.getText();
+        String cantidaPersonas = Text_Numero_Depersonas.getText();
+        String salarioCliente = Text_Salario_Ciente.getText();
+        String cargo = Text_Cargo.getText();
+        String otrosIngresos = Text_Otros_Ingresos.getText();
+        String parentesco = Text_Parentesco.getText();
+        //Parentesco
+        String espesifiqueParentesco = text_Esperfique_Parentesco.getText();
+        String espesifiqueParentesco2 = text_Esperfique_Parentesco2.getText();
+        String espesifiqueParentesco3 = text_Esperfique_Parentesco3.getText();
+
+        String numeroDepersonas = Text_Numero_Depersonas.getText();
+
+        String apa = aparta.getText();
+
+
+        try {
+            PreparedStatement preparedStatement = Conexion.abrirConexion().prepareStatement(
+                    "INSERT INTO departamento (NombreDepartamento) VALUES (?)"
+            );
+            preparedStatement.setString(1, apa);
+            preparedStatement.execute();
+
+
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+
+        }
+
+
     }
 
 
+
+
+
+
+
+
+
+    @FXML
+    private TextField Text_Numero_Depersonas;
+    @FXML
+    private TextField text_Esperfique_Parentesco;
+
+    @FXML
+    private TextField Text_Fecha_Nacimiento;
     @FXML
     private RadioButton Radio_Viudo;
     @FXML
@@ -51,8 +159,7 @@ public class Administrador implements Initializable {
     private RadioButton Radio_Habitacion;
     @FXML
     private RadioButton Radio_Apartamento;
-    @FXML
-    private TextField Text_Numero_Depersonas;
+
 
     @FXML
     private RadioButton Radio_Transporte_Publico;
@@ -62,8 +169,7 @@ public class Administrador implements Initializable {
 
     @FXML
     private RadioButton Radiio_Prestada;
-    @FXML
-    private TextField text_Esperfique_Parentesco;
+
     @FXML
     private TextField Text_Cantidad_Aportada2;
     @FXML
@@ -116,46 +222,32 @@ public class Administrador implements Initializable {
     @FXML
     private TextField Text_Observaciones_;
     @FXML
-    private ComboBox<String> Combo_Municipio;
-    @FXML
-    private ComboBox<String> Combo_Departamento;
-
-    @FXML
     private ComboBox<?> Combo_Estado_Civil;
-
-
-
-    /**combo que mustra los departamentos
-     * **
-    public void lista_Departamento(ActionEvent actionEvent) {
-        Combo_Departamento.getValue();
-    }
-   // @FXML
-    ObservableList<String> listaDepartamento = FXCollections.observableArrayList(
-            "Atlántida","Choluteca","Colón","Comayagua","Copán","Cortes","El Paraíso","Francisco Morazán","Gracias a Dios","Intibucá",
-            "Islas de la Bahía","La Paz","Lempira","Ocotepeque","Olancho","Santa Bárbara","Valle","Yoro"
-    );
-    public void initialize(URL url , ResourceBundle resourceBundle){
-        Combo_Departamento.setItems(listaDepartamento);
-        Combo_Municipio.setItems(listaMunicipios);
-
-    }
-    **/
-    /**
-     * combom que muestra los municipios
-     * **/
-    public void listaMunicipios(ActionEvent actionEvent) {
-        Combo_Municipio.getValue();
-    }
+    @FXML
+    private TextField Text_Nombre_Completo;
 
     @FXML
-    ObservableList<String> listaMunicipios = FXCollections.observableArrayList(
-            "La Ceiba","Tela","Colón","Jutiapa","La Masica","San Francisco","Arizona","Esparta","El Porvenir","Intibucá",
-            "Islas de la Bahía","La Paz","Lempira","Ocotepeque","Olancho","Santa Bárbara","Valle","Yoro"
-    );
-   // public void initialize2(URL url2 , ResourceBundle resourceBundle2){
-     //   Combo_Municipio.setItems(listaMunicipios);
-    //}
+    private TextField Text_Edad;
+    @FXML
+    private TextField Text_Lugar_Nacimiento;
+
+
+    @FXML
+    private TextField Text_Dirrecion_Actual;
+    @FXML
+    private TextField Text_Telefono_Fijo;
+    @FXML
+    private TextField Text_Movil;
+
+    @FXML
+    private TextField Text_Referencia_Personal;
+    @FXML
+    private TextField Text_Movil_Referencia_Personal;
+
+    @FXML
+    private TextField Text_profesion;
+    @FXML
+    private TextField Text_Numero_Identidad;
 
 
 
@@ -164,13 +256,6 @@ public class Administrador implements Initializable {
 
 
 
-
-
-
-
-    public void registrar_Cliente(ActionEvent actionEvent) {
-
-    }
 
     public void PanelDatoGeneralesButton(javafx.scene.input.MouseEvent event) {
         this.panel_Dato_Generales.setVisible(true);
@@ -189,9 +274,24 @@ public class Administrador implements Initializable {
     }
 
 
-    public void llevar(){
+    @Override
+    public void initialize(URL url , ResourceBundle resourceBundle){
+        listaDepartamento = FXCollections.observableArrayList();
+        Departamento.llenar_combobox(listaDepartamento);
+        cbDepartamento.setItems(listaDepartamento);
 
+        listaMunicipios = FXCollections.observableArrayList();
+        Municipios.llenar_comboboxMunicipio(listaMunicipios);
+        Combo_Municipio.setItems(listaMunicipios);
     }
+
+
+
+
+
+
+
+
 
     public void IrFormulario2 () {
         try {
@@ -279,6 +379,7 @@ public class Administrador implements Initializable {
     }
 
 
-
+    public void registrar_Cliente(ActionEvent actionEvent) {
+    }
 }
 
