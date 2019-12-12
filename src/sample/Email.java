@@ -1,5 +1,6 @@
 
-package sample;
+/**package sample;
+>>>>>>> formularioCliente
 
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -43,4 +44,8 @@ String clave = "Dinorey64";
     }
 }
 
+
+
+
+**/
 
