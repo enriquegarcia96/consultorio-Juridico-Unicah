@@ -1,24 +1,28 @@
 package sample;
-import javafx.application.Platform;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.net.URL;
+
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 
-public class Controller {
+public class Controller implements Initializable{
 
     @FXML
     private TextField TexboxNombre;
@@ -26,33 +30,48 @@ public class Controller {
     private Button ButtonIniciar;
     @FXML
     private PasswordField TexboxContrasena;
+    @FXML
+    private ComboBox<Usuario> cbtipousuario;
+    private ObservableList<Usuario> listaUsuario;
+
+    @Override
+    public void initialize(URL url , ResourceBundle resourceBundle) {
+        listaUsuario = FXCollections.observableArrayList();
+        Usuario.llenar_combobox3(listaUsuario);
+        cbtipousuario.setItems(listaUsuario);
+    }
+
+
 
     public void entrandoLogin(ActionEvent actionEvent) throws Exception {
         String usuario = TexboxNombre.getText();
         String contrasena = TexboxContrasena.getText();
         Controlador abrir = new Controlador();
-
-
         Controller controller = new Controller();
         boolean testeo = controller.validar(usuario,contrasena);
 
         if (!testeo){
             Alert alert = new Alert(Alert.AlertType.ERROR,
-                    "naaa");
+                    "usuario inexistente");
             alert.show();
         }else {
-            abrir.IrFormulario();
-
+            Stage maxi = new Stage();
+            Parent registro = FXMLLoader.load(getClass().getResource("Controlador_Grafico.fxml"));
+            Scene scene = new Scene(registro);
+            maxi.setScene(scene);
+            maxi.setMaximized(true);
+            maxi.show();
+            Stage cerrarLogin = (Stage) ButtonIniciar.getScene().getWindow();
+            cerrarLogin.close();
+            
         }
-
-
     }
 
     public boolean validar(String usuario, String contrasena) throws Exception{
         try {
             PreparedStatement sentencia = Conexion.abrirConexion().prepareStatement(
                     "select * from usuario" +
-                            " where TipoUsuario = ?" +
+                            " where NombreUsuario = ?" +
                             " and Contrasena = ?"
             );
             sentencia.setString(1,usuario);
@@ -68,25 +87,9 @@ public class Controller {
         return false;
     }
 
+
     public void cerrar(ActionEvent actionEvent){
         System.exit(0);
-    }
-
-    private Button BtnLogin;
-
-
-    public void onPasarVentana(MouseEvent mouseEvent) throws IOException {
-        Stage stage = null;
-        Parent rootPrincipal = null;
-
-        if (mouseEvent.getSource() == BtnLogin) {
-            stage = (Stage) BtnLogin.getScene().getWindow();
-
-            rootPrincipal = FXMLLoader.load(getClass().getResource("Controlador_Grafico.fxml"));
-            Scene ScenePrincipal = new Scene(rootPrincipal);
-            stage.setScene(ScenePrincipal);
-            stage.show();
-        }
     }
 
 

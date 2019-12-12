@@ -1,12 +1,15 @@
 package sample;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import java.io.IOException;
+
+
 
 public class Controlador {
-
     public void IrFormulario () {
         try {
 //Te lo comento para que  lo comprendamos tú y yo
@@ -21,12 +24,26 @@ public class Controlador {
             //Main.primaryStage.close();
             stage.show();
 
-
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+   // public Button button_registro_abogados;
 
 
-}
+    public void IrFormulario2(){
+
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Administrador_Grafico.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root1));
+                stage.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
