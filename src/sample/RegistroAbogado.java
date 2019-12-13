@@ -25,8 +25,6 @@ import java.util.ResourceBundle;
 public class RegistroAbogado implements Initializable{
 
 
-    
-
     @FXML
     private RadioButton Radio_RentadaA;
     @FXML

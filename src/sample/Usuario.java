@@ -7,41 +7,79 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Usuario {
-    private Integer IdUsuario;
-
-
-    private String Nombre;
-    private String Contrasena;
+    private String Id;
+    private String NombreCompleto;
     private String TipoUsuario;
+    private String Contrasena;
 
 
-    public  Usuario(Integer IdUsuario, String Nombre, String Contrasena, String TipoUsuario){
-        this.IdUsuario = IdUsuario;
-        this.Nombre = Nombre;
+    public Usuario(String Id, String NombreCompleto, String TipoUsuario, String Contrasena){
+        this.Id = Id;
+        this.NombreCompleto = NombreCompleto;
         this.TipoUsuario = TipoUsuario;
         this.Contrasena = Contrasena;
+    }
 
+    public static Usuario GetDatos(String usuario, String contrasena) {
+        Usuario Datos;
+        PreparedStatement Sentencia;
+        try {
+            Sentencia = Conexion.abrirConexion().prepareStatement(
+                    "SELECT * FROM usuario" +
+                            " WHERE (NombreUsuario = ? AND Contrasena = ?)"
+            );
 
+            Sentencia.setString(1, usuario);
+            Sentencia.setString(2, contrasena);
+            ResultSet resultado = Sentencia.executeQuery();
+
+            if (resultado.next()) {
+                Datos = Usuario.CrearInstancia(resultado);
+                System.out.println("El registro ya existe");
+            } else {
+                Datos = new Usuario("", "", "", "");
+            }
+            return Datos;
+
+        } catch (SQLException e) {
+            System.err.println("Ha ocurrido un error " + e.getMessage());
+        }
+        return null;
     }
 
 
-    public Integer getIdUsuario() {
-        return IdUsuario;
+    private static Usuario CrearInstancia(ResultSet resultado){
+        Usuario usuario = null;
+        try{
+            usuario = new Usuario(
+                    resultado.getString("Id"),
+                    resultado.getString("NombreCompleto"),
+                    resultado.getString("TipoUsuario"),
+                    resultado.getString("Contrasena")
+            );
+
+        }catch (SQLException e){
+            System.err.println("Ocurrio un error" + e.getMessage());
+        }
+        return usuario;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
-        IdUsuario = idUsuario;
+
+    public String getId() {
+        return Id;
+    }
+
+    public void setId(String idUsuario) {
+        Id = idUsuario;
     }
 
 
-
-
-    public String getNombre() {
-        return Nombre;
+    public String getNombreUsuario() {
+        return NombreCompleto;
     }
 
-    public void setNombre(String nombre) {
-        Nombre = nombre;
+    public void setNombreUsuario(String nombreCompleto) {
+        NombreCompleto = nombreCompleto;
     }
 
     public String getTipoUsuario() {
@@ -72,13 +110,11 @@ public class Usuario {
     public static void llenar_combobox3(ObservableList<Usuario> lista3) {
         try {
 
-            PreparedStatement preparedStatement = Conexion.abrirConexion().prepareStatement("SELECT * FROM consultorio.usuario");
+            PreparedStatement preparedStatement = Conexion.abrirConexion().prepareStatement("SELECT * FROM usuario");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 lista3.add(new Usuario(
-                        resultSet.getInt("IdUsuario"),
-
-
+                        resultSet.getString("Id"),
                         resultSet.getString("NombreCompleto"),
                         resultSet.getString("TipoUsuario"),
                         resultSet.getString("Contrasena")
@@ -90,4 +126,3 @@ public class Usuario {
     }
 
 }
-

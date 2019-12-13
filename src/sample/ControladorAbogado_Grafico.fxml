@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.effect.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.effect.Blend?>
+
+<AnchorPane fx:id="FormularioPrincipal" focusTraversable="true" prefHeight="728.0" prefWidth="1425.0" styleClass="tablecell" stylesheets="@../Css/ImagenesDeBotones.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControlAbogado">
+    <children>
+        <Pane layoutX="-10.0" layoutY="-3.0" prefHeight="713.0" prefWidth="221.0" style="-fx-background-color: #222D32;" styleClass="tablecell" stylesheets="@../Css/ImagenesDeBotones.css">
+            <children>
+                <Button fx:id="btn_registro_clientes" graphicTextGap="10.0" layoutX="19.0" layoutY="167.0" mnemonicParsing="false" onAction="#IrFormulario2" prefHeight="49.0" prefWidth="145.0" style="-fx-background-color: #222D32;" styleClass="hola" stylesheets="@../Css/ImagenesDeBotones.css" text="Clientes" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="216.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Imagenes/customer_32px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="Consolas" size="16.0" />
+
+                    </font>
+                    <effect>
+                        <Blend mode="SOFT_LIGHT" />
+                    </effect></Button>
+                <RadioButton layoutX="54.0" layoutY="245.0" mnemonicParsing="false" onAction="#IrFormulario2" opacity="0.6" styleClass="hola" stylesheets="@../Css/ImagenesDeBotones.css" text="Registrar" textFill="#fcf9f9">
+                    <font>
+                        <Font size="13.0" />
+                    </font></RadioButton>
+                <Separator layoutX="88.0" layoutY="221.0" orientation="VERTICAL" prefHeight="200.0" visible="false" />
+                <Separator layoutX="85.0" layoutY="251.0" orientation="VERTICAL" prefHeight="17.0" prefWidth="6.0" visible="false" />
+            </children>
+        </Pane>
+          <AnchorPane layoutX="-10.0" opacity="0.94" prefHeight="72.0" prefWidth="1459.0" style="-fx-background-color: #10316b;" AnchorPane.leftAnchor="-10.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="72.0" fitWidth="60.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/law_32px.png" />
+               </image>
+               <effect>
+                  <Blend mode="LIGHTEN" />
+               </effect>
+            </ImageView>
+            <Label layoutX="60.0" layoutY="19.0" prefHeight="45.0" prefWidth="161.0" stylesheets="@../Css/ImagenesDeBotones.css" text="Procurador" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </AnchorPane>
+
+    </children>
+
+</AnchorPane>

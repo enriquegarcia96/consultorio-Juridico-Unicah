@@ -41,7 +41,6 @@
     -fx-padding: 5;
     fx-shadow-highlight-color: f0f0f0;
     -fx-body-color: linear-gradient(from 0em 0em to 0em 2.083333em, white, #D7D7D7, white);
-<<<<<<< HEAD
 
 }
 .login:hover{
@@ -58,21 +57,4 @@
     -fx-background-color: linear-gradient(#66d8f2, #82faae);
 
 }
-=======
 
-}
-.login:hover{
-    -fx-focus-color: #56bfba;
-
-}
-
-.boton{
-    -fx-font-size: 13pt;
-    -fx-background-radius: 12;
-    -fx-padding: 5;
-}
-.boton:hover{
-    -fx-background-color: linear-gradient(#66d8f2, #82faae);
-
-}
->>>>>>> b6

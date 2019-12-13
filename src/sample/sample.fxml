@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
+<?import java.lang.*?>
 <?import javafx.scene.effect.*?>
-
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -38,8 +37,7 @@
                   <Font size="19.0" />
                </font>
             </PasswordField>
-            <ComboBox fx:id="cbtipousuario" layoutX="107.0" layoutY="192.0" prefHeight="48.0" prefWidth="138.0" styleClass="boton" stylesheets="@../Css/ImagenesDeBotones.css" />
-            <Button fx:id="ButtonIniciar" layoutX="101.0" layoutY="258.0" mnemonicParsing="false" onAction="#entrandoLogin" prefHeight="36.0" prefWidth="150.0" styleClass="boton" stylesheets="@../Css/ImagenesDeBotones.css" text="Iniciar Sesion" />
+            <Button fx:id="ButtonIniciar" layoutX="101.0" layoutY="220.0" mnemonicParsing="false" onAction="#entrandoLogin" prefHeight="36.0" prefWidth="150.0" styleClass="boton" stylesheets="@../Css/ImagenesDeBotones.css" text="Iniciar Sesion" />
 
          </children>
       </AnchorPane>
@@ -56,4 +54,3 @@
    </children>
 
 </AnchorPane>
-

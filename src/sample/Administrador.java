@@ -8,10 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -20,8 +17,7 @@ import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-
-public class Administrador implements Initializable {
+public class Administrador  implements Initializable{
 
 
     @FXML
@@ -36,11 +32,17 @@ public class Administrador implements Initializable {
     private Button Boton_Registra;
     @FXML
     private TextField aparta;
+    @FXML
+    private DatePicker Text_Fecha_Nacimiento;
+
 
 
 
     public void botonRegistrar(ActionEvent actionEvent){
+
         Departamento departamento = cbDepartamento.getSelectionModel().getSelectedItem();
+        Municipios municipios = Combo_Municipio.getSelectionModel().getSelectedItem();
+
         String estadoCivil = "";
         if (Radio_Soltero.isSelected()) {
             estadoCivil = "Soltero";
@@ -83,11 +85,17 @@ public class Administrador implements Initializable {
 
         String nombreCompleto = Text_Nombre_Completo.getText();
         String edad = Text_Edad.getText();
-        String fechaNacimiento = Text_Fecha_Nacimiento.getText();
+
+        DatePicker fechaNacimiento = Text_Fecha_Nacimiento;
+
+
+        //String fechaNacimiento = Text_Fecha_Nacimiento.getText();
+
         String lugarnacimiento = Text_Lugar_Nacimiento.getText();
+
         String direccionActual = Text_Dirrecion_Actual.getText();
         ObservableList<Departamento> departamento2 = cbDepartamento.getItems();
-        ObservableList<Municipios> municipios = Combo_Municipio.getItems();
+        ObservableList<Municipios> municipios2 = Combo_Municipio.getItems();
         String telefonoFijo = Text_Telefono_Fijo.getText();
         String movil = Text_Movil.getText();
         String referenciaPersonal = Text_Referencia_Personal.getText();
@@ -108,31 +116,57 @@ public class Administrador implements Initializable {
 
         String numeroDepersonas = Text_Numero_Depersonas.getText();
 
-        String apa = aparta.getText();
 
 
         try {
             PreparedStatement preparedStatement = Conexion.abrirConexion().prepareStatement(
-                    "INSERT INTO departamento (NombreDepartamento) VALUES (?)"
+                    "INSERT INTO cliente (IdMunicipios,NumeroIdentidad,IdDepartamento,NombreCompleto,Edad,Direccion,TelefonoFijo,TelefonoMovil,EstadoCivil,FechaNacimiento,LugarDeNacimiento,NombreDelReferente,TelefonoDelReferente,Salario,OtrosIngresos,CantidadPersonasDependientes,Parentesco,TipoVivienda,EstadoVivienda,PersonasHabitando,Transporte)" +
+                            //"VALUES ('2','0209199700123','1','belkin garcia','30','barrio las flores','24445643','89652134','Viudo','19900923','Tocoa','enrique ramirez','98543234','8000','remesa','3','mama','propia','limpio','4','carropropio');"
+                            "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
             );
-            preparedStatement.setString(1,departamento.getNombreDepartamento());
+            preparedStatement.setString(1, String.valueOf(municipios.getId()));
+            preparedStatement.setString(2, identidad);
+            preparedStatement.setString(3, String.valueOf(departamento.getId()));
+            preparedStatement.setString(4, nombreCompleto);
+            preparedStatement.setInt(5, Integer.parseInt(edad));
+            preparedStatement.setString(6, direccionActual);
+            preparedStatement.setString(7, telefonoFijo);
+            preparedStatement.setString(8, movil);
+            preparedStatement.setString(9, estadoCivil);
+            preparedStatement.setString(10, fechaNacimiento.getEditor().getText());
+            //preparedStatement.setDate(10, Date.valueOf(fechaNacimiento));
+            preparedStatement.setString(11, lugarnacimiento);
+            preparedStatement.setString(12, referenciaPersonal);
+            preparedStatement.setString(13, telefonoReferencia);
+            preparedStatement.setString(14, salarioCliente);
+            preparedStatement.setString(15, otrosIngresos);
+            preparedStatement.setString(16, cantidaPersonas);
+            preparedStatement.setString(17, parentesco);
+            preparedStatement.setString(18, vivienda);
+            preparedStatement.setString(19, habitada);
+            preparedStatement.setString(20, numeroDepersonas);
+            preparedStatement.setString(21, trasporte);
             preparedStatement.execute();
 
+            PreparedStatement preparedStatement1 = Conexion.abrirConexion().prepareStatement(
+                    "INSERT INTO  parentesco (Parentesco) VALUES (?,?,?);"
+            );
+            preparedStatement1.setString(1,espesifiqueParentesco);
+            preparedStatement1.setString(2,espesifiqueParentesco2);
+            preparedStatement1.setString(3,espesifiqueParentesco3);
+            preparedStatement1.execute();
 
+            PreparedStatement preparedStatement2 = Conexion.abrirConexion().prepareStatement(
+                    ""
+            );
         } catch (SQLException e) {
             System.err.println(e.getMessage());
-
         }
 
 
+
+
     }
-
-
-
-
-
-
-
 
 
     @FXML
@@ -141,7 +175,7 @@ public class Administrador implements Initializable {
     private TextField text_Esperfique_Parentesco;
 
     @FXML
-    private TextField Text_Fecha_Nacimiento;
+    private TextField Text_Fecha_Nac7imiento;
     @FXML
     private RadioButton Radio_Viudo;
     @FXML
@@ -270,11 +304,7 @@ public class Administrador implements Initializable {
         this.panel_Dato_Generales.setVisible(true);
         this.Panel_Egresos.setVisible(false);
     }
-    public void Panel_De_Egresos(javafx.scene.input.MouseEvent event) {
-        this.Panel_Egresos.setVisible(true);
-        this.panel_Dato_Generales.setVisible(true);
-        this.Panel_Ingreso_Familiar.setVisible(false);
-    }
+
 
 
     @Override

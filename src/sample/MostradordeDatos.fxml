@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="566.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MostradorDatos">
+   <padding>
+      <Insets right="100.0" />
+   </padding>
+   <children>
+      <TableView layoutX="-6.0" prefHeight="566.0" prefWidth="784.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-103.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="tvid" prefWidth="64.0" text="ID" />
+          <TableColumn fx:id="tvnombreidentidad" prefWidth="123.0" text="NumeroIdentidad" />
+            <TableColumn fx:id="tvnombrecompleto" minWidth="7.0" prefWidth="116.0" text="NombreCompleto" />
+            <TableColumn fx:id="tvedad" prefWidth="82.0" text="Edad" />
+            <TableColumn fx:id="tvdireccion" prefWidth="130.0" text="Direccion" />
+            <TableColumn fx:id="tvtelefono" prefWidth="168.0" text="Telefono" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

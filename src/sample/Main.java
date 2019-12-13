@@ -15,13 +15,12 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Inicie sesion");
         primaryStage.setScene(new Scene(root, 700, 500));
-       // this.primaryStage = primaryStage;
         primaryStage.show();
     }
 
 
  public static void main(String[] args) {
-        String destino= "enrique.garcia@unah.hn";
+        String destino= "adanalfredogaleascarcamo@gmail.com";
         String asunto= "sdfsdfsd";
         String cuerpo= "adfadsfsdf";
         //Email.enviarConGMail(destino,asunto,cuerpo);

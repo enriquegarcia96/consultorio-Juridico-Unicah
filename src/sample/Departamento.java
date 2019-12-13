@@ -45,7 +45,7 @@ public class Departamento {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 lista.add(new Departamento(
-                        resultSet.getInt("IdDepartamento"),
+                        resultSet.getInt("Id"),
                         resultSet.getString("NombreDepartamento")
                 ));
             }

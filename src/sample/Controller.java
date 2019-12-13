@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
 
 
 
-public class Controller implements Initializable {
+public class Controller {
 
 
     @FXML
@@ -32,16 +32,9 @@ public class Controller implements Initializable {
     private Button ButtonIniciar;
     @FXML
     private PasswordField TexboxContrasena;
-    @FXML
-    private ComboBox<Usuario> cbtipousuario;
-    private ObservableList<Usuario> listaUsuario;
 
-    @Override
-    public void initialize(URL url , ResourceBundle resourceBundle) {
-        listaUsuario = FXCollections.observableArrayList();
-        Usuario.llenar_combobox3(listaUsuario);
-        cbtipousuario.setItems(listaUsuario);
-    }
+
+
 
 
     public void entrandoLogin(ActionEvent actionEvent) throws Exception {
@@ -49,30 +42,40 @@ public class Controller implements Initializable {
         String contrasena = TexboxContrasena.getText();
         Controlador abrir = new Controlador();
         Controller controller = new Controller();
-        boolean testeo = controller.validar(usuario,contrasena);
+        boolean testeo = controller.validar(usuario, contrasena);
 
-        if (!testeo){
+        if (!testeo) {
             Alert alert = new Alert(Alert.AlertType.ERROR,
                     "usuario inexistente");
             alert.show();
-        }else {
-            Stage maxi = new Stage();
-            Parent registro = FXMLLoader.load(getClass().getResource("Controlador_Grafico.fxml"));
-            Scene scene = new Scene(registro);
-            maxi.setScene(scene);
-            maxi.setMaximized(true);
-            maxi.show();
-            Stage cerrarLogin = (Stage) ButtonIniciar.getScene().getWindow();
-            cerrarLogin.close();
-            
+        } else {
+            String Datos = controller.Datos(usuario, contrasena);
+            if (Datos.equals("Administrador")) {
+                Stage maxi = new Stage();
+                Parent registro = FXMLLoader.load(getClass().getResource("Controlador_Grafico.fxml"));
+                Scene scene = new Scene(registro);
+                maxi.setScene(scene);
+                maxi.setMaximized(true);
+                maxi.show();
+                Stage cerrarLogin = (Stage) ButtonIniciar.getScene().getWindow();
+                cerrarLogin.close();
+            } else {
+                Stage maxi = new Stage();
+                Parent registro = FXMLLoader.load(getClass().getResource("ControladorAbogado_Grafico.fxml"));
+                Scene scene = new Scene(registro);
+                maxi.setScene(scene);
+                maxi.setMaximized(true);
+                maxi.show();
+                Stage cerrarLogin = (Stage) ButtonIniciar.getScene().getWindow();
+                cerrarLogin.close();
+            }
         }
     }
-
     public boolean validar(String usuario, String contrasena) throws Exception{
         try {
             PreparedStatement sentencia = Conexion.abrirConexion().prepareStatement(
                     "select * from usuario" +
-                            " where NombreUsuario = ?" +
+                            " where NombreCompleto = ?" +
                             " and Contrasena = ?"
             );
             sentencia.setString(1,usuario);
@@ -86,6 +89,29 @@ public class Controller implements Initializable {
             System.err.println(e.getMessage());
         }
         return false;
+    }
+    public String Datos(String usuario, String contrasena) throws Exception {
+        try {
+            PreparedStatement sentencia = Conexion.abrirConexion().prepareStatement(
+                    "select TipoUsuario from usuario" +
+                            " where NombreCompleto = ?" +
+                            " and Contrasena = ?"
+            );
+            sentencia.setString(1, usuario);
+            sentencia.setString(2, contrasena);
+            System.out.println(sentencia);
+            ResultSet resultSet = sentencia.executeQuery();
+            if (resultSet.next()) {
+                String devolver = resultSet.getString("TipoUsuario");
+                return devolver;
+                /*//Aqui Agrego getDatos
+                Usuario usuarioCreado = Usuario.GetDatos(usuario, contrasena);
+                return usuarioCreado;*/
+            }
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        return null;
     }
 
 
