@@ -2,20 +2,16 @@ package sample;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+
 import java.net.URL;
-
-import java.io.IOException;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -84,7 +80,10 @@ public class Controller implements Initializable {
         try {
             PreparedStatement sentencia = Conexion.abrirConexion().prepareStatement(
                     "select * from usuario" +
+
                             " where NombreCompleto = ?" +
+
+                            " where TipoUsuario = ?" +
                             " and Contrasena = ?"
             );
             sentencia.setString(1, usuario);

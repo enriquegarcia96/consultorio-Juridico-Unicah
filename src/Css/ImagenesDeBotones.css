@@ -7,21 +7,19 @@
 }
 
 .colorBorde {
-    -fx-border-color:#ff7315;
+    -fx-border-color:black;
     -fx-background-radius: 12;
     -fx-padding: 5;
     -fx-shadow-highlight-color: f0f0f0;
 }
 
 .colorBorde:hover {
-    -fx-background-color: linear-gradient(#ff7315, #232020);
+   /**-fx-background-color: linear-gradient(#ff7315, #232020);**/
 }
 
 .tablecell {
-    -fx-padding: 0.5em 0.5em 0.1em 0.3em;
-    -fx-border-color: -fx-box-border -fx-box-border transparent transparent;
-    -fx-font: 10px "Segoe UI";
-    -fx-border-insets: 0;
+   -fx-border-color:black 5px none;
+
 }
 
 .hola{
@@ -41,7 +39,6 @@
     -fx-padding: 5;
     fx-shadow-highlight-color: f0f0f0;
     -fx-body-color: linear-gradient(from 0em 0em to 0em 2.083333em, white, #D7D7D7, white);
-<<<<<<< HEAD
 
 }
 .login:hover{
@@ -58,21 +55,3 @@
     -fx-background-color: linear-gradient(#66d8f2, #82faae);
 
 }
-=======
-
-}
-.login:hover{
-    -fx-focus-color: #56bfba;
-
-}
-
-.boton{
-    -fx-font-size: 13pt;
-    -fx-background-radius: 12;
-    -fx-padding: 5;
-}
-.boton:hover{
-    -fx-background-color: linear-gradient(#66d8f2, #82faae);
-
-}
->>>>>>> b6

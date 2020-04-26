@@ -41,11 +41,11 @@ public class Departamento {
     public static void llenar_combobox(ObservableList<Departamento> lista) {
         try {
 
-            PreparedStatement preparedStatement = Conexion.abrirConexion().prepareStatement("SELECT * FROM consultorio.departamento");
+            PreparedStatement preparedStatement = Conexion.abrirConexion().prepareStatement("SELECT * FROM consultorio_juridico_unicah.departamento");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 lista.add(new Departamento(
-                        resultSet.getInt("IdDepartamento"),
+                        resultSet.getInt("Id"),
                         resultSet.getString("NombreDepartamento")
                 ));
             }

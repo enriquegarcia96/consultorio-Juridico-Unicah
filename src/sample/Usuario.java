@@ -9,6 +9,9 @@ import java.sql.SQLException;
 public class Usuario {
     private String Id;
     private String NombreCompleto;
+
+    private int IdUsuario;
+    private String Nombre;
     private String TipoUsuario;
     private String Contrasena;
 
@@ -57,6 +60,10 @@ public class Usuario {
                     resultado.getString("TipoUsuario"),
                     resultado.getString("Contrasena")
             );
+
+
+
+
 
         }catch (SQLException e){
             System.err.println("Ocurrio un error" + e.getMessage());
@@ -110,7 +117,7 @@ public class Usuario {
     public static void llenar_combobox3(ObservableList<Usuario> lista3) {
         try {
 
-            PreparedStatement preparedStatement = Conexion.abrirConexion().prepareStatement("SELECT * FROM consultorio.usuario");
+            PreparedStatement preparedStatement = Conexion.abrirConexion().prepareStatement("SELECT * FROM consultorio_juridico_unicah.usuario");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 lista3.add(new Usuario(
