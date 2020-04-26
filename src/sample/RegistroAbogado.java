@@ -15,9 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.net.URL;
-import java.sql.*;
 import java.util.ResourceBundle;
 
 
@@ -121,7 +119,7 @@ public class RegistroAbogado implements Initializable{
         CBdepartamentoA.setItems(listaDepartamento);
 
         listaMunicipio = FXCollections.observableArrayList();
-        Municipios.llenar_combobox2(listaMunicipio);
+        Municipios.llenar_comboboxMunicipio(listaMunicipio);
         Combo_MunicipioA.setItems(listaMunicipio);
 
 

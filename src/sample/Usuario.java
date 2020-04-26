@@ -7,25 +7,23 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Usuario {
-    private Integer IdUsuario;
 
-
+    private int IdUsuario;
     private String Nombre;
     private String Contrasena;
     private String TipoUsuario;
 
 
-    public  Usuario(Integer IdUsuario, String Nombre, String Contrasena, String TipoUsuario){
+
+    public  Usuario(int IdUsuario, String Nombre, String Contrasena, String TipoUsuario){
         this.IdUsuario = IdUsuario;
         this.Nombre = Nombre;
         this.TipoUsuario = TipoUsuario;
         this.Contrasena = Contrasena;
-
-
     }
 
 
-    public Integer getIdUsuario() {
+    public int getIdUsuario() {
         return IdUsuario;
     }
 
@@ -72,7 +70,7 @@ public class Usuario {
     public static void llenar_combobox3(ObservableList<Usuario> lista3) {
         try {
 
-            PreparedStatement preparedStatement = Conexion.abrirConexion().prepareStatement("SELECT * FROM consultorio.usuario");
+            PreparedStatement preparedStatement = Conexion.abrirConexion().prepareStatement("SELECT * FROM consultorio_juridico_unicah.usuario");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 lista3.add(new Usuario(
