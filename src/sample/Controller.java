@@ -47,6 +47,7 @@ public class Controller implements Initializable {
         Controller controller = new Controller();
         boolean testeo = controller.validar(usuario,contrasena);
 
+
         if (!testeo){
             Alert alert = new Alert(Alert.AlertType.ERROR,
                     "usuario inexistente");
@@ -74,7 +75,7 @@ public class Controller implements Initializable {
             sentencia.setString(1,usuario);
             sentencia.setString(2,contrasena);
             System.out.println(sentencia);
-            ResultSet resultSet = sentencia.executeQuery();
+                ResultSet resultSet = sentencia.executeQuery();
             if (resultSet.next()){
                 return true;
             }
